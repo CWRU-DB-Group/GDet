@@ -280,3 +280,7 @@ function draw() {
 window.addEventListener("load", () => {
     draw();
 });
+
+$('#exampleModal').on('show.bs.modal', function (event) {
+   //....
+})

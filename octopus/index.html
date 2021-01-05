@@ -1,297 +1,469 @@
 <!doctype html>
 <html class="fixed">
-	<head>
+<head>
 
-		<!-- Basic -->
-		<meta charset="UTF-8">
+    <!-- Basic -->
+    <meta charset="UTF-8">
 
-		<title>Dashboard | JSOFT Themes | JSOFT-Admin</title>
-		<meta name="keywords" content="HTML5 Admin Template" />
-		<meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
-		<meta name="author" content="JSOFT.net">
+    <title>Dashboard | JSOFT Themes | JSOFT-Admin</title>
+    <meta name="keywords" content="HTML5 Admin Template"/>
+    <meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
+    <meta name="author" content="JSOFT.net">
 
-		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-		<!-- Web Fonts  -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
 
-		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css" />
-		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
-		<link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css"/>
+    <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css"/>
 
-		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
-		<link rel="stylesheet" href="assets/vendor/morris/morris.css" />
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css"/>
+    <link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="assets/vendor/morris/morris.css"/>
 
-		<!-- Theme CSS -->
-		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/stylesheets/theme.css"/>
 
-		<!-- Skin CSS -->
-		<link rel="stylesheet" href="assets/stylesheets/skins/default.css" />
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="assets/stylesheets/skins/default.css"/>
 
-		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
 
-		<!-- Head Libs -->
-		<script src="assets/vendor/modernizr/modernizr.js"></script>
-		<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-		<script type="text/javascript" src="assets/javascripts/index.js"></script>
+    <!-- Head Libs -->
+    <script src="assets/vendor/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script type="text/javascript" src="assets/javascripts/index.js"></script>
 
-	</head>
-	<body>
-		<section class="body">
+</head>
+<body>
+<section class="body">
 
-			<!-- start: header -->
-			<header class="header reset-header">
+    <!-- start: header -->
+    <header class="header reset-header">
 
 
-				<!-- start: search & user box -->
-				<div class="center" >
-					<h1 class="title1" >GDet Demonstration</h1>
+        <!-- start: search & user box -->
+        <div class="center">
+            <h1 class="title1">GDet Demonstration</h1>
+        </div>
+
+        <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        <aside id="sidebar-left" class="sidebar-left">
+
+            <div class="sidebar-header">
+                <div class="sidebar-title">
+                    <h4 class="sidebar-name center">Control Panel</h4>
+                </div>
+                <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html"
+                     data-fire-event="sidebar-left-toggle">
+                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                </div>
+            </div>
+            <hr/>
+            <div class="form-group  center">
+                <div class="center">
+                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Load Graph</button>
+                </div>
+            </div>
+            <div class="form-group  center">
+                <label class="col-md-3 control-label " for="ac" id="iswitch">Interactive: </label>
+                <div class="col-md-6">
+                    <label class="switch">
+                        <input type="checkbox" id="ac">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+
+            <hr class="separator"/>
+
+            <div class="form-group">
+                <div class="center">
+                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" data-toggle="modal"
+                            data-target="#exampleModal" data-whatever="@configmodel">Model Configuration
+                    </button>
+                </div>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Model Configuration</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li class="bi">
+                                        <button type="button" class="btn btn-secondary">Load Pretraind Model</button>
+                                    </li>
+
+
+                                    <li class="bi">
+                                        <button type="button" class="btn btn-secondary">Train Model</button>
+                                    </li>
+
+
+                                    <li class="bi">
+                                        <button type="button" class="btn btn-secondary">Save Model</button>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <hr/>
+
+            <div class="form-group">
+                <div class="center">
+                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Detect Errors</button>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="center">
+                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Compare Methods</button>
+                </div>
+
+            </div>
+
+        </aside>
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <div class="panel-actions">
+                                <a href="#" class="fa fa-caret-down"></a>
+                                <a href="#" class="fa fa-times"></a>
+                            </div>
+
+                            <h2 class="panel-title">Explorer</h2>
+                            <p class="panel-subtitle"></p>
+                        </header>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                       aria-controls="home" aria-selected="true">Graph Exploration</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                       aria-controls="profile" aria-selected="false">Embedding View</a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                     aria-labelledby="home-tab">
+                                    <div id="mynetwork"></div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    ...
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="col-md-6">
+                    <section class="panel">
+
+                        <header class="panel-heading">
+                            <div class="panel-actions">
+                                <a href="#" class="fa fa-caret-down"></a>
+                                <a href="#" class="fa fa-times"></a>
+                            </div>
+                            <h2 class="panel-title">Top-20 Error Nodes</h2>
+                            <p class="panel-subtitle"></p>
+                        </header>
+
+                        <div class="panel-body">
+                            <div id="ntable">
+                                <table class="table table-striped">
+                                    <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Node ID</th>
+                                        <th scope="col">Attribute-1</th>
+                                        <th scope="col">Attribute-2</th>
+                                        <th scope="col">Attribute-3</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">001</th>
+                                        <td>...</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">002</th>
+                                        <td>...</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">003</th>
+                                        <td>...</td>
+                                        <td>...</td>
+                                        <td>...</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- start: page -->
+            <div class="row">
+                <div class="col-md-6">
+                    <section class="panel ">
+                        <header class="panel-heading">
+                            <div class="panel-actions">
+                                <a href="#" class="fa fa-caret-down"></a>
+                                <a href="#" class="fa fa-times"></a>
+                            </div>
+                            <h2 class="panel-title">Performance</h2>
+                            <p class="panel-subtitle"></p>
+                        </header>
+
+                        <div class="panel-body">
+                            <div class="row center">
+
+                                <div class="col-lg-6 ">
+                                    <div class="chart-data-selector" id="salesSelectorWrapper">
+                                        <h5>
+                                            F1 Score
+
+                                        </h5>
+
+                                        <div id="salesSelectorItems" class="chart-data-selector-items mt-sm center">
+                                            <!-- Flot: Sales JSOFT Admin -->
+                                            <div class="chart chart-sm" data-sales-rel="JSOFT Admin" id="flotDashSales1"
+                                                 class="chart-active"></div>
+                                            <script>
+
+                                                var flotDashSales1Data = [{
+                                                    data: [
+                                                        ["1", 0.2],
+                                                        ["2", 0.3],
+                                                        ["3", 0.5],
+                                                        ["4", 0.55],
+                                                        ["5", 0.55],
+                                                        ["6", 0.5],
+                                                        ["7", 0.6],
+                                                        ["8", 0.8]
+                                                    ],
+                                                    color: "#0088cc"
+                                                }];
+
+                                            </script>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 ">
+
+                                    <h5>
+                                        Performance Table
+
+                                    </h5>
+                                    <div id="ptable">
+                                        <table class="table table-striped">
+                                            <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">Model</th>
+                                                <th scope="col">Precision</th>
+                                                <th scope="col">Recall</th>
+                                                <th scope="col">F1</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">001</th>
+                                                <td>...</td>
+                                                <td>...</td>
+                                                <td>...</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">002</th>
+                                                <td>...</td>
+                                                <td>...</td>
+                                                <td>...</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">003</th>
+                                                <td>...</td>
+                                                <td>...</td>
+                                                <td>...</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </section>
+                </div>
+
+				<div class="col-md-6">
+					<section class="panel">
+
+						<header class="panel-heading">
+							<div class="panel-actions">
+								<a href="#" class="fa fa-caret-down"></a>
+								<a href="#" class="fa fa-times"></a>
+							</div>
+							<h2 class="panel-title">Interactive Feedback</h2>
+							<p class="panel-subtitle"></p>
+						</header>
+
+						<div class="panel-body">
+							<div>
+								<table class="table table-striped">
+									<thead class="thead-dark">
+									<tr>
+										<th scope="col"></th>
+										<th scope="col">Node ID</th>
+										<th scope="col">Attribute-1</th>
+										<th scope="col">Attribute-2</th>
+										<th scope="col">Attribute-3</th>
+
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
+										<th scope="row">004</th>
+										<td>...</td>
+										<td>...</td>
+										<td>...</td>
+									</tr>
+									<tr>
+										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
+										<th scope="row">005</th>
+										<td>...</td>
+										<td>...</td>
+										<td>...</td>
+									</tr>
+									<tr>
+										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
+										<th scope="row">006</th>
+										<td>...</td>
+										<td>...</td>
+										<td>...</td>
+									</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</section>
 				</div>
 
-				<!-- end: search & user box -->
-			</header>
-			<!-- end: header -->
-
-			<div class="inner-wrapper">
-				<!-- start: sidebar -->
-				<aside id="sidebar-left" class="sidebar-left">
-				
-					<div class="sidebar-header">
-						<div class="sidebar-title">
-							<h4 class="sidebar-name center">Control Panel</h4>
-						</div>
-						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
-							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-						</div>
-					</div>
-					<hr/>
-
-						<div class="sidebar-title center">
-							<h5 class="sidebar-name">Model Training</h5>
-						</div>
+            </div>
 
 
-
-				
-							<hr class="separator" />
-
-							<div class="form-group">
-								<label class="col-md-3 control-label lf" for="te">Training Ecpohs: </label>
-								<div class="col-md-6">
-									<input type="text" class="form-control" id="te">
-								</div>
-							</div>
+            <div class="row">
 
 
-							<div class="form-group">
-								<label class="col-md-3 control-label " for="lr">Learning Rate: </label>
-								<div class="col-md-6">
-									<input type="text" class="form-control" id="lr">
-								</div>
-							</div>
+            </div>
 
-					<div class="form-group">
-						<label class="col-md-3 control-label " for="ac">Active Learning: </label>
-						<div class="col-md-6">
-							<label class="switch">
-								<input type="checkbox" id="ac">
-								<span class="slider round"></span>
-							</label>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="center">
-							<button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Train Model From Scratch</button>
-						</div>
-
-					</div>
-					<hr/>
-					<div class="sidebar-title center">
-						<h5 class="sidebar-name">Save/Load Model</h5>
-					</div>
-
-					<div class="form-group">
-						<div class="center">
-							<button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Load Pretrained Model</button>
-						</div>
-
-					</div>
-					<div class="form-group">
-						<div class="center">
-							<button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Save Model Locally</button>
-						</div>
-
-					</div>
-
-				</aside>
-				<!-- end: sidebar -->
-
-				<section role="main" class="content-body">
-
-						<div class="row">
-						<div class="col-md-6">
-							<section class="panel">
-								<header class="panel-heading">
-									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
-										<a href="#" class="fa fa-times"></a>
-									</div>
-
-									<h2 class="panel-title">Graph Explore</h2>
-									<p class="panel-subtitle"></p>
-								</header>
-								<div class="panel-body">
-
-									<!-- Flot: Basic -->
-
-									<div id="mynetwork"></div>
-
-								</div>
-							</section>
-						</div>
-						<div class="col-md-6">
-							<section class="panel">
-								<header class="panel-heading">
-									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
-										<a href="#" class="fa fa-times"></a>
-									</div>
-									<h2 class="panel-title">Node Table</h2>
-									<p class="panel-subtitle"></p>
-								</header>
-								<div class="panel-body">
-
-									<!-- Flot: Curves -->
-									<div class="chart chart-md" id="flotDashRealTime"></div>
-
-								</div>
-							</section>
-						</div>
-					</div>
-
-					<!-- start: page -->
-					<div class="row">
-
-							<section class="panel ">
-								<div class="panel-body center">
-									<div class="row center">
-										<div class="col-lg-8 center">
-											<div class="chart-data-selector center" id="salesSelectorWrapper" >
-												<h2>
-													Performance:
-
-												</h2>
-
-												<div id="salesSelectorItems" class="chart-data-selector-items mt-sm center">
-													<!-- Flot: Sales JSOFT Admin -->
-													<div class="chart chart-sm" data-sales-rel="JSOFT Admin" id="flotDashSales1" class="chart-active"></div>
-													<script>
-
-														var flotDashSales1Data = [{
-														    data: [
-														        ["1", 140],
-														        ["2", 240],
-														        ["3", 190],
-														        ["4", 140],
-														        ["5", 180],
-														        ["6", 320],
-														        ["7", 270],
-														        ["8", 180]
-														    ],
-														    color: "#0088cc"
-														}];
-
-														// See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
-
-													</script>
-
-													<!-- Flot: Sales JSOFT Drupal -->
+            <!-- end: page -->
+        </section>
+    </div>
 
 
-													<!-- Flot: Sales JSOFT Wordpress -->
+</section>
 
-												</div>
+<!-- Vendor -->
+<script src="assets/vendor/jquery/jquery.js"></script>
+<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="assets/vendor/nanoscroller/nanoscroller.js"></script>
+<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
+<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 
-											</div>
-										</div>
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+<script src="assets/vendor/flot/jquery.flot.js"></script>
+<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+<script src="assets/vendor/flot/jquery.flot.pie.js"></script>
+<script src="assets/vendor/flot/jquery.flot.categories.js"></script>
+<script src="assets/vendor/flot/jquery.flot.resize.js"></script>
+<script src="assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="assets/vendor/raphael/raphael.js"></script>
+<script src="assets/vendor/morris/morris.js"></script>
+<script src="assets/vendor/gauge/gauge.js"></script>
+<script src="assets/vendor/snap-svg/snap.svg.js"></script>
+<script src="assets/vendor/liquid-meter/liquid.meter.js"></script>
+<script src="assets/vendor/jqvmap/jquery.vmap.js"></script>
+<script src="assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+<script src="assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
 
-									</div>
-								</div>
-							</section>
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
 
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
 
-					</div>
-
-					
-
-					<div class="row">
-
-
-
-					</div>
-
-					<!-- end: page -->
-				</section>
-			</div>
-
-
-		</section>
-
-		<!-- Vendor -->
-		<script src="assets/vendor/jquery/jquery.js"></script>
-		<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
-		<script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
-		<script src="assets/vendor/nanoscroller/nanoscroller.js"></script>
-		<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-		<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
-		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-		
-		<!-- Specific Page Vendor -->
-		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
-		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
-		<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
-		<script src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
-		<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
-		<script src="assets/vendor/flot/jquery.flot.js"></script>
-		<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
-		<script src="assets/vendor/flot/jquery.flot.pie.js"></script>
-		<script src="assets/vendor/flot/jquery.flot.categories.js"></script>
-		<script src="assets/vendor/flot/jquery.flot.resize.js"></script>
-		<script src="assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
-		<script src="assets/vendor/raphael/raphael.js"></script>
-		<script src="assets/vendor/morris/morris.js"></script>
-		<script src="assets/vendor/gauge/gauge.js"></script>
-		<script src="assets/vendor/snap-svg/snap.svg.js"></script>
-		<script src="assets/vendor/liquid-meter/liquid.meter.js"></script>
-		<script src="assets/vendor/jqvmap/jquery.vmap.js"></script>
-		<script src="assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
-		<script src="assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
-		<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
-		<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
-		<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
-		<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
-		<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
-		<script src="assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
-		
-		<!-- Theme Base, Components and Settings -->
-		<script src="assets/javascripts/theme.js"></script>
-		
-		<!-- Theme Custom -->
-		<script src="assets/javascripts/theme.custom.js"></script>
-		
-		<!-- Theme Initialization Files -->
-		<script src="assets/javascripts/theme.init.js"></script>
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
 
 
-		<!-- Examples -->
-		<script src="assets/javascripts/dashboard/examples.dashboard.js"></script>
+<!-- Examples -->
+<script src="assets/javascripts/dashboard/examples.dashboard.js"></script>
 
-	</body>
+</body>
 </html>

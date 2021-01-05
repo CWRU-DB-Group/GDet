@@ -1,11 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5223f30-84ce-4da4-bc5e-b9e0d1fff587" name="Default Changelist" comment="" />
+    <list default="true" id="c5223f30-84ce-4da4-bc5e-b9e0d1fff587" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/assets/javascripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/octopus/assets/javascripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/assets/stylesheets/theme-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/octopus/assets/stylesheets/theme-custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/forms-advanced.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/forms-basic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/forms-code-editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/forms-layouts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/forms-validation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/forms-wizard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/octopus/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/layouts-boxed.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/layouts-default.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/layouts-menu-collapsed.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/layouts-scroll.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/mailbox-compose.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/mailbox-email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/mailbox-folder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/maps-google-maps-builder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/maps-google-maps.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/maps-vector.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-404-withoutmenus.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-blank.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-invoice-print.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-invoice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-lock-screen-example.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-lock-screen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-log-viewer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-media-gallery.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-recover-password.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-search-results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-session-timeout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-signin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-timeline.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/pages-user-profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/tables-advanced.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/tables-ajax.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/tables-basic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/tables-editable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/tables-pricing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/tables-responsive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-accordions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-alerts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-animations.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-blocks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-buttons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-carousels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-charts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-extra.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-grid-system.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-icons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-lightbox.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-modals.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-nestable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-notifications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-panels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-portlets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-progressbars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-sliders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-tabs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-tree-view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-typography.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/octopus/ui-elements-widgets.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m0s0rNslnDIg6UIimc0YZHdMVl" />
   <component name="ProjectViewState">
@@ -15,6 +86,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -41,10 +113,17 @@
       <option name="presentableId" value="Default" />
       <updated>1608641623121</updated>
       <workItem from="1608641628213" duration="15049000" />
+      <workItem from="1608687237393" duration="23000000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="553" y="237" width="670" height="676" key="search.everywhere.popup" timestamp="1609804546156">
+      <screen x="0" y="23" width="1680" height="979" />
+    </state>
+    <state x="553" y="237" width="670" height="676" key="search.everywhere.popup/1680.23.1680.1027/0.23.1680.979@0.23.1680.979" timestamp="1609804546156" />
   </component>
 </project>
