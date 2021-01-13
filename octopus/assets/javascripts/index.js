@@ -144,39 +144,39 @@ $(document).on("click", "#be", function () {
 
     $("#etable").find('tbody').append('<tr><th class="tid" scope="row">505</th>\n' +
         '                                        <td>Toyota_Premio</td>\n' +
-        '                                        <td>General_Motors</td>\n' +
-        '                                        <td class="tcerror">Toyota_Prius</td></tr>');
+        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td >Toyota_Prius</td></tr>');
 
 
     $("#etable").find('tbody').append('<tr><th scope="row">457</th>\n' +
         '                                        <td>Toyota_Cressida</td>\n' +
-        '                                        <td>General_Motors</td>\n' +
-        '                                        <td class="tcerror">Toyota_Mark_II</td></tr>');
+        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td>Toyota_Mark_II</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">571</th>\n' +
         '                                        <td>Toyota_Venza</td>\n' +
-        '                                        <td>General_Motors</td>\n' +
-        '                                        <td class="tcerror">Lexus_ES</td></tr>');
+        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td>Lexus_ES</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">617</th>\n' +
-        '                                        <td>Cadillac_Catera</td>\n' +
-        '                                        <td class="tcerror" >General_Motors</td>\n' +
-        '                                        <td class="tcerror">Holden_Commodore</td></tr>');
+        '                                        <td class="tcerror">Cadillac_Catera</td>\n' +
+        '                                        <td >General_Motors</td>\n' +
+        '                                        <td>Holden_Commodore</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">624</th>\n' +
         '                                        <td>Nissan_Rogue</td>\n' +
-        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
         '                                        <td class="tcerror">Nissan_X-Trail</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">547</th>\n' +
         '                                        <td>Nissan_Skyline_GT-R</td>\n' +
         '                                        <td>General_Motors</td>\n' +
-        '                                        <td>Nissan_Skyline</td></tr>');
+        '                                        <td class="tcerror">Nissan_Skyline</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">512</th>\n' +
-        '                                        <td class="tcerror">Toyota_Chaser</td>\n' +
+        '                                        <td>Toyota_Chaser</td>\n' +
         '                                        <td class="tcerror">General_Motors</td>\n' +
-        '                                        <td class="tcerror">Toyota_Cressida</td></tr>');
+        '                                        <td>Toyota_Cressida</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">514</th>\n' +
         '                                        <td class="tcerror">Dodge_Shadow</td>\n' +
@@ -185,12 +185,12 @@ $(document).on("click", "#be", function () {
 
     $("#etable").find('tbody').append('<tr><th scope="row">611</th>\n' +
         '                                        <td>Lancia_Dedra</td>\n' +
-        '                                        <td>General_Motors</td>\n' +
-        '                                        <td class="tcerror">Alfa_Romeo_155</td></tr>');
+        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td>Alfa_Romeo_155</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">610</th>\n' +
         '                                        <td class="tcerror">Buick_Reatta</td>\n' +
-        '                                        <td class="tcerror">*eneral_Mot**s</td>\n' +
+        '                                        <td>*eneral_Mot**s</td>\n' +
         '                                        <td>Cadillac_Allanté</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">486</th>\n' +
@@ -200,7 +200,7 @@ $(document).on("click", "#be", function () {
 
     $("#etable").find('tbody').append('<tr><th scope="row">596</th>\n' +
         '                                        <td>BMW_328</td>\n' +
-        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
         '                                        <td class="tcerror">BMW_326</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">532</th>\n' +
@@ -210,8 +210,8 @@ $(document).on("click", "#be", function () {
 
     $("#etable").find('tbody').append('<tr><th scope="row">566</th>\n' +
         '                                        <td>Honda_Civic</td>\n' +
-        '                                        <td>General_Motors</td>\n' +
-        '                                        <td class="tcerror">Honda_City</td></tr>');
+        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td>Honda_City</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">465</th>\n' +
         '                                        <td>Volkswagen_Golf_Mk5</td>\n' +
@@ -224,9 +224,9 @@ $(document).on("click", "#be", function () {
         '                                        <td class="tcerror">Pontiac_GTO</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">575</th>\n' +
-        '                                        <td class="tcerror">Bentley_Continental_R</td>\n' +
+        '                                        <td >Bentley_Continental_R</td>\n' +
         '                                        <td>General_Motors</td>\n' +
-        '                                        <td>Bentley_Azure</td></tr>');
+        '                                        <td class="tcerror">Bentley_Azure</td></tr>');
 
     $("#etable").find('tbody').append('<tr><th scope="row">604</th>\n' +
         '                                        <td>Suzuki_Wagon_R</td>\n' +
@@ -240,8 +240,8 @@ $(document).on("click", "#be", function () {
 
     $("#etable").find('tbody').append('<tr><th scope="row">601</th>\n' +
         '                                        <td>Fiat_Marea</td>\n' +
-        '                                        <td>General_Motors</td>\n' +
-        '                                        <td class="tcerror">Fiat_Multipla</td></tr>');
+        '                                        <td class="tcerror"General_Motors</td>\n' +
+        '                                        <td>Fiat_Multipla</td></tr>');
 
     $('#fbtable').show();
     $('#fbsubmit').show();
