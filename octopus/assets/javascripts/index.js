@@ -1,9 +1,9 @@
-var nodes = null;
-var edges = null;
+var nodes = [];
+var edges = [];
 var network = null;
 
 var LENGTH_MAIN = 350,
-    LENGTH_SERVER = 150,
+    LENGTH_SERVER = 10,
     LENGTH_SUB = 50,
     WIDTH_SCALE = 2,
     GREEN = "green",
@@ -15,272 +15,273 @@ var LENGTH_MAIN = 350,
 
 // Called when the Visualization API is loaded.
 function draw() {
-    // Create a data table with nodes.
-    nodes = [];
 
-    // Create a data table with links.
-    edges = [];
-
-    nodes.push({ id: 1, label: "192.168.0.1", group: "switch", value: 10 });
-    nodes.push({ id: 2, label: "192.168.0.2", group: "switch", value: 8 });
-    nodes.push({ id: 3, label: "192.168.0.3", group: "switch", value: 6 });
-    edges.push({
-        from: 1,
-        to: 2,
-        length: LENGTH_MAIN,
-        width: WIDTH_SCALE * 6,
-        label: "0.71 mbps",
-    });
-    edges.push({
-        from: 1,
-        to: 3,
-        length: LENGTH_MAIN,
-        width: WIDTH_SCALE * 4,
-        label: "0.55 mbps",
-    });
-
-    // group around 2
-    for (var i = 100; i <= 104; i++) {
-        var value = 1;
-        var width = WIDTH_SCALE * 2;
-        var color = GRAY;
-        var label = null;
-
-        if (i === 103) {
-            value = 5;
-            width = 3;
-        }
-        if (i === 102) {
-            color = RED;
-            label = "error";
-        }
-
-        nodes.push({
-            id: i,
-            label: "192.168.0." + i,
-            group: "desktop",
-            value: value,
-        });
-        edges.push({
-            from: 2,
-            to: i,
-            length: LENGTH_SUB,
-            color: color,
-            fontColor: color,
-            width: width,
-            label: label,
-        });
-    }
-    nodes.push({
-        id: 201,
-        label: "192.168.0.201",
-        group: "desktop",
-        value: 1,
-    });
-    edges.push({
-        from: 2,
-        to: 201,
-        length: LENGTH_SUB,
-        color: GRAY,
-        width: WIDTH_SCALE,
-    });
-
-    // group around 3
-    nodes.push({
-        id: 202,
-        label: "192.168.0.202",
-        group: "desktop",
-        value: 4,
-    });
-    edges.push({
-        from: 3,
-        to: 202,
-        length: LENGTH_SUB,
-        color: GRAY,
-        width: WIDTH_SCALE * 2,
-    });
-    for (var i = 230; i <= 231; i++) {
-        nodes.push({
-            id: i,
-            label: "192.168.0." + i,
-            group: "mobile",
-            value: 2,
-        });
-        edges.push({
-            from: 3,
-            to: i,
-            length: LENGTH_SUB,
-            color: GRAY,
-            fontColor: GRAY,
-            width: WIDTH_SCALE,
-        });
-    }
-
-    // group around 1
-    nodes.push({
-        id: 10,
-        label: "192.168.0.10",
-        group: "server",
-        value: 10,
-    });
-    edges.push({
-        from: 1,
-        to: 10,
-        length: LENGTH_SERVER,
-        color: GRAY,
-        width: WIDTH_SCALE * 6,
-        label: "0.92 mbps",
-    });
-    nodes.push({
-        id: 11,
-        label: "192.168.0.11",
-        group: "server",
-        value: 7,
-    });
-    edges.push({
-        from: 1,
-        to: 11,
-        length: LENGTH_SERVER,
-        color: GRAY,
-        width: WIDTH_SCALE * 3,
-        label: "0.68 mbps",
-    });
-    nodes.push({
-        id: 12,
-        label: "192.168.0.12",
-        group: "server",
-        value: 3,
-    });
-    edges.push({
-        from: 1,
-        to: 12,
-        length: LENGTH_SERVER,
-        color: GRAY,
-        width: WIDTH_SCALE,
-        label: "0.3 mbps",
-    });
-
-    nodes.push({
-        id: 204,
-        label: "Internet",
-        group: "internet",
-        value: 10,
-    });
-    edges.push({
-        from: 1,
-        to: 204,
-        length: 200,
-        width: WIDTH_SCALE * 3,
-        label: "0.63 mbps",
-    });
-
-    // legend
-    var mynetwork = document.getElementById("mynetwork");
-    var x = -500 ;
-    var y = 500;
-    var step = 70;
-    nodes.push({
-        id: 1000,
-        x: x,
-        y: y,
-        label: "Internet",
-        group: "internet",
-        value: 1,
-        fixed: true,
-        physics: false,
-    });
-    nodes.push({
-        id: 1001,
-        x: x,
-        y: y + step,
-        label: "Switch",
-        group: "switch",
-        value: 1,
-        fixed: true,
-        physics: false,
-    });
-    nodes.push({
-        id: 1002,
-        x: x,
-        y: y + 2 * step,
-        label: "Server",
-        group: "server",
-        value: 1,
-        fixed: true,
-        physics: false,
-    });
-    nodes.push({
-        id: 1003,
-        x: x,
-        y: y + 3 * step,
-        label: "Computer",
-        group: "desktop",
-        value: 1,
-        fixed: true,
-        physics: false,
-    });
-    nodes.push({
-        id: 1004,
-        x: x,
-        y: y + 4 * step,
-        label: "Smartphone",
-        group: "mobile",
-        value: 1,
-        fixed: true,
-        physics: false,
-    });
 
     // create a network
     var container = document.getElementById("mynetwork");
+    alert(nodes.length);
     var data = {
         nodes: nodes,
         edges: edges,
     };
     var options = {
+
+        layout: {
+            improvedLayout: false,
+        },
+
         nodes: {
             scaling: {
-                min: 16,
-                max: 32,
+                min: 8,
+                max: 16,
             },
+
         },
         edges: {
             color: GRAY,
-            smooth: false,
+            width: WIDTH_SCALE * 2
         },
-        physics: {
-            barnesHut: { gravitationalConstant: -30000 },
-            stabilization: { iterations: 2500 },
-        },
+
         groups: {
-            switch: {
+            error: {
                 shape: "triangle",
-                color: "#FF9900", // orange
+                color: "##C5000B", // orange
             },
-            desktop: {
+            correct: {
                 shape: "dot",
                 color: "#2B7CE9", // blue
             },
-            mobile: {
-                shape: "dot",
-                color: "#5A1E5C", // purple
-            },
-            server: {
-                shape: "square",
-                color: "#C5000B", // red
-            },
-            internet: {
-                shape: "square",
-                color: "#109618", // green
-            },
+
         },
     };
     network = new vis.Network(container, data, options);
+    alert("Done drawing");
 }
 
 window.addEventListener("load", () => {
-    draw();
+
 });
 
 $('#exampleModal').on('show.bs.modal', function (event) {
-   //....
+    //....
 })
+
+$(document).on("click", "#showg", function () {
+    draw();
+});
+
+$(document).ready(function () {
+    $('#fbtable').hide();
+    $('#fbsubmit').hide();
+    $('#myembedding').hide();
+    $('.sppanel').hide();
+});
+
+$(document).on("click", "#loadg", function () {
+    // AJAX in the data file
+
+    $.get('transportation_node_dirty.csv', function (data) {
+
+
+        var lines = data.split("\n");
+        alert(lines.length);
+        for (var j = 1; j < 637; j++) {
+
+            var values = lines[j].split(','); // Split up the comma seperated values
+            // We read the key,1st, 2nd and 3rd rows
+            var val = values[0].slice(1, values[0].length - 1);
+
+
+            nodes.push({
+                id: val,
+                label: val,
+                group: "correct",
+                value: 5,
+                font: {
+                    size: 50,
+                },
+            });
+
+        }
+
+        for (var j = 637; j < lines.length; j++) {
+
+            var values = lines[j].split(','); // Split up the comma seperated values
+            // We read the key,1st, 2nd and 3rd rows
+            var val1 = values[0].trim();
+
+            var val2 = values[1].trim();
+
+
+            edges.push({
+                from: val1,
+                to: val2,
+
+            });
+
+
+        }
+
+        alert("Done Loading Graph.");
+    });
+
+
+});
+
+
+$(document).on("click", "#be", function () {
+    // AJAX in the data file
+
+    $("#etable").append(" <thead class=\"thead-dark\">\n" +
+        "                                    <tr>\n" +
+        "\n" +
+        "                                        <th scope=\"col\">Node ID</th>\n" +
+        "                                        <th scope=\"col\">Name</th>\n" +
+        "                                        <th scope=\"col\">Manufacture</th>\n" +
+        "                                        <th scope=\"col\">RelatedMeanOfTransportation</th>\n" +
+        "\n" +
+        "                                    </tr>\n" +
+        "                                    </thead><tbody id=\"etbody\"></tbody>");
+
+    $("#etable").find('tbody').append('<tr><th class="tid" scope="row">505</th>\n' +
+        '                                        <td>Toyota_Premio</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Toyota_Prius</td></tr>');
+
+
+    $("#etable").find('tbody').append('<tr><th scope="row">457</th>\n' +
+        '                                        <td>Toyota_Cressida</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Toyota_Mark_II</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">571</th>\n' +
+        '                                        <td>Toyota_Venza</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Lexus_ES</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">617</th>\n' +
+        '                                        <td>Cadillac_Catera</td>\n' +
+        '                                        <td class="tcerror" >General_Motors</td>\n' +
+        '                                        <td class="tcerror">Holden_Commodore</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">624</th>\n' +
+        '                                        <td>Nissan_Rogue</td>\n' +
+        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td class="tcerror">Nissan_X-Trail</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">547</th>\n' +
+        '                                        <td>Nissan_Skyline_GT-R</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td>Nissan_Skyline</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">512</th>\n' +
+        '                                        <td class="tcerror">Toyota_Chaser</td>\n' +
+        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td class="tcerror">Toyota_Cressida</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">514</th>\n' +
+        '                                        <td class="tcerror">Dodge_Shadow</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td>Shelby_CSX</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">611</th>\n' +
+        '                                        <td>Lancia_Dedra</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Alfa_Romeo_155</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">610</th>\n' +
+        '                                        <td class="tcerror">Buick_Reatta</td>\n' +
+        '                                        <td class="tcerror">*eneral_Mot**s</td>\n' +
+        '                                        <td>Cadillac_Allanté</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">486</th>\n' +
+        '                                        <td>Chrysler_Pacifica</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">_Country</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">596</th>\n' +
+        '                                        <td>BMW_328</td>\n' +
+        '                                        <td class="tcerror">General_Motors</td>\n' +
+        '                                        <td class="tcerror">BMW_326</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">532</th>\n' +
+        '                                        <td>Nissan_350Z</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Infiniti_G</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">566</th>\n' +
+        '                                        <td>Honda_Civic</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Honda_City</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">465</th>\n' +
+        '                                        <td>Volkswagen_Golf_Mk5</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">SEAT_Altea</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">456</th>\n' +
+        '                                        <td>Holden_Monaro</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Pontiac_GTO</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">575</th>\n' +
+        '                                        <td class="tcerror">Bentley_Continental_R</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td>Bentley_Azure</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">604</th>\n' +
+        '                                        <td>Suzuki_Wagon_R</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Changhe</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">586</th>\n' +
+        '                                        <td class="tcerror">Perodua_Rusa</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td>Daihatsu_Hijet</td></tr>');
+
+    $("#etable").find('tbody').append('<tr><th scope="row">601</th>\n' +
+        '                                        <td>Fiat_Marea</td>\n' +
+        '                                        <td>General_Motors</td>\n' +
+        '                                        <td class="tcerror">Fiat_Multipla</td></tr>');
+
+    $('#fbtable').show();
+    $('#fbsubmit').show();
+
+});
+
+
+// code to read selected table row cell data (values).
+$(document).on('click', '.tid', function () {
+    // get the current row
+    var nid = $(this).text().trim();
+    var pos = network.getPosition('505');
+    alert(pos.x);
+});
+
+// $(document).on('click', '#a1', function () {
+//     // get the current row
+//     $("#myembedding").hide();
+//     $("#mynetwork").show();
+//
+//
+// });
+// $(document).on('click', '#a2', function () {
+//     // get the current row
+//     $("#myembedding").show();
+//     $("#mynetwork").hide();
+//
+// });
+
+$(document).on('click', '#feedback-submit', function () {
+    alert("Embedding Generated.");
+    $('#myembedding').show();
+
+});
+
+
+
+$(document).on('click', '#compare', function () {
+    alert("Performance Generated.");
+    $('.sppanel').show();
+
+});

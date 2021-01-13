@@ -5,7 +5,7 @@
     <!-- Basic -->
     <meta charset="UTF-8">
 
-    <title>Dashboard | JSOFT Themes | JSOFT-Admin</title>
+    <title>GEDet Demonstration</title>
     <meta name="keywords" content="HTML5 Admin Template"/>
     <meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
     <meta name="author" content="JSOFT.net">
@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
 
     <!-- Head Libs -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="assets/vendor/modernizr/modernizr.js"></script>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <script type="text/javascript" src="assets/javascripts/index.js"></script>
@@ -52,7 +53,7 @@
 
         <!-- start: search & user box -->
         <div class="center">
-            <h1 class="title1">GDet Demonstration</h1>
+            <h1 class="title1">GEDet Demonstration</h1>
         </div>
 
         <!-- end: search & user box -->
@@ -65,17 +66,27 @@
 
             <div class="sidebar-header">
                 <div class="sidebar-title">
-                    <h4 class="sidebar-name center">Control Panel</h4>
+                    <h4 class="sidebar-name center">Configuration Panel</h4>
                 </div>
-                <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html"
-                     data-fire-event="sidebar-left-toggle">
-                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-                </div>
+
             </div>
             <hr/>
             <div class="form-group  center">
+
+                <select class="form-select form-select-sm center" id="ds">
+                    <option selected class="center">Please select dataset</option>
+                    <option class="center">DBP-Transportation</option>
+                </select>
+            </div>
+
+            <div class="form-group  center">
                 <div class="center">
-                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Load Graph</button>
+                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" id="loadg">Load Graph</button>
+                </div>
+            </div>
+            <div class="form-group  center">
+                <div class="center">
+                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" id="showg">Show Graph</button>
                 </div>
             </div>
             <div class="form-group  center">
@@ -114,19 +125,13 @@
 
 
                                     <li class="bi">
-                                        <button type="button" class="btn btn-secondary">Train Model</button>
-                                    </li>
-
-
-                                    <li class="bi">
-                                        <button type="button" class="btn btn-secondary">Save Model</button>
+                                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2">Train Model</button>
                                     </li>
 
                                 </ul>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Confirm</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
                             </div>
                         </div>
                     </div>
@@ -134,17 +139,42 @@
 
 
             </div>
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel2">Training Configuration</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Transformation File Path</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" value="pluggable_transformations.csv"
+                                id = "tpath" style="width: 200%">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <hr/>
 
             <div class="form-group">
-                <div class="center">
-                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Detect Errors</button>
+                <div class="center" id = "derrors">
+                    <button id = "be" type="button" class="mb-xs mt-xs mr-xs btn btn-default">Detect Errors</button>
                 </div>
 
             </div>
             <div class="form-group">
                 <div class="center">
-                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default">Compare Methods</button>
+                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" id="compare">Compare Methods</button>
                 </div>
 
             </div>
@@ -164,7 +194,7 @@
                                 <a href="#" class="fa fa-times"></a>
                             </div>
 
-                            <h2 class="panel-title">Explorer</h2>
+                            <h2 class="panel-title">Exploration</h2>
                             <p class="panel-subtitle"></p>
                         </header>
 
@@ -172,11 +202,11 @@
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                       aria-controls="home" aria-selected="true">Graph Exploration</a>
+                                       aria-controls="home" aria-selected="true" id = "a1">Graph Exploration</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                       aria-controls="profile" aria-selected="false">Embedding View</a>
+                                       aria-controls="profile" aria-selected="false" id = "a2">Embedding View</a>
                                 </li>
 
                             </ul>
@@ -186,7 +216,7 @@
                                     <div id="mynetwork"></div>
                                 </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    ...
+                                    <div id="myembedding" class="center"><img id = "picture"  src = "animation_transportation.gif"/></div>
                                 </div>
                             </div>
                         </div>
@@ -207,35 +237,9 @@
 
                         <div class="panel-body">
                             <div id="ntable">
-                                <table class="table table-striped">
-                                    <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">Node ID</th>
-                                        <th scope="col">Attribute-1</th>
-                                        <th scope="col">Attribute-2</th>
-                                        <th scope="col">Attribute-3</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">001</th>
-                                        <td>...</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">002</th>
-                                        <td>...</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">003</th>
-                                        <td>...</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    </tbody>
+                                <table class="table table-striped" id="etable">
+
+
                                 </table>
 
                             </div>
@@ -258,9 +262,9 @@
                         </header>
 
                         <div class="panel-body">
-                            <div class="row center">
+                            <div class="row center" id="ppanel">
 
-                                <div class="col-lg-6 ">
+                                <div class="col-lg-6 sppanel" >
                                     <div class="chart-data-selector" id="salesSelectorWrapper">
                                         <h5>
                                             F1 Score
@@ -295,14 +299,14 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 ">
+                                <div class="col-lg-6 sppanel">
 
                                     <h5>
                                         Performance Table
 
                                     </h5>
                                     <div id="ptable">
-                                        <table class="table table-striped">
+                                        <table class="table table-striped center" >
                                             <thead class="thead-dark">
                                             <tr>
                                                 <th scope="col">Model</th>
@@ -311,24 +315,24 @@
                                                 <th scope="col">F1</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="petable">
                                             <tr>
-                                                <th scope="row">001</th>
-                                                <td>...</td>
-                                                <td>...</td>
-                                                <td>...</td>
+                                                <th scope="row">GEDet</th>
+                                                <td>0.24</td>
+                                                <td>0.98</td>
+                                                <td>0.39</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">002</th>
-                                                <td>...</td>
-                                                <td>...</td>
-                                                <td>...</td>
+                                                <th scope="row">VioDet</th>
+                                                <td>0.27</td>
+                                                <td>0.13</td>
+                                                <td>0.17</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">003</th>
-                                                <td>...</td>
-                                                <td>...</td>
-                                                <td>...</td>
+                                                <th scope="row">OutlierDet</th>
+                                                <td>0.17</td>
+                                                <td>0.12</td>
+                                                <td>0.14</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -359,54 +363,152 @@
 						</header>
 
 						<div class="panel-body">
-							<div>
-								<table class="table table-striped">
+							<div id="fbpanel">
+								<table class="table table-striped" id="fbtable">
 									<thead class="thead-dark">
 									<tr>
 										<th scope="col"></th>
 										<th scope="col">Node ID</th>
-										<th scope="col">Attribute-1</th>
-										<th scope="col">Attribute-2</th>
-										<th scope="col">Attribute-3</th>
+										<th scope="col">Name</th>
+										<th scope="col">Manufacturer</th>
+										<th scope="col">RelatedMeanOfTransportation</th>
 
 									</tr>
 									</thead>
 									<tbody>
 									<tr>
 										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-										<th scope="row">004</th>
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
+										<th scope="row">510</th>
+										<td>Audi_Q3</td>
+										<td>General_Motors</td>
+										<td>Škoda_Yeti</td>
+                                        <td><div class="exampleCheck">
+                                            <input type="checkbox">
+                                        </div></td>
 									</tr>
+                                    <tr>
+                                        <td><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal1">Evaluate</button></td>
+                                        <th scope="row">567</th>
+                                        <td>Isuzu_i-Series</td>
+                                        <td>Ge*e*al_*otors</td>
+                                        <td>Chevrolet_Colorado></td>
+                                        <td><div class="exampleCheck">
+                                            <input type="checkbox">
+                                        </div></td>
+                                    </tr>
 									<tr>
 										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-										<th scope="row">005</th>
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
+										<th scope="row">548</th>
+										<td>Rover_Streetwise</td>
+										<td>General_Motors</td>
+										<td>_25</td>
+                                        <td><div class="exampleCheck">
+                                            <input type="checkbox">
+                                        </div></td>
 									</tr>
-									<tr>
-										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-										<th scope="row">006</th>
-										<td>...</td>
-										<td>...</td>
-										<td>...</td>
-									</tr>
+                                    <tr>
+                                        <td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
+                                        <th scope="row">588</th>
+                                        <td>Fiat_128</td>
+                                        <td>Fiat</td>
+                                        <td>Autobianchi_A111</td>
+                                        <td><div class="exampleCheck">
+                                            <input type="checkbox">
+                                        </div></td>
+                                    </tr>
+
+
 									</tbody>
+
 								</table>
 
 							</div>
-						</div>
+                            <div class="center" id="fbsubmit">
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" id = "feedback-submit">Submit</button>
+                            </div>
+                        </div>
 					</section>
 				</div>
 
             </div>
 
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel1">Suggestions based on 567</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                            <table class="table table-striped" >
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th></th>
+                                    <th scope="col">Node ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Manufacturer</th>
+                                    <th scope="col">RelatedMeanOfTransportation</th>
+                                    <th scope="col">Label</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>top-1 positive</td>
+                                    <th scope="row">57</th>
+                                    <td>Saturn_Relay</td>
+                                    <td>**neral_Moto*s</td>
+                                    <td>Pontiac_Aztek</td>
+                                    <td>Error</td>
+
+                                </tr>
+                                <tr>
+                                    <td>top-2 positive</td>
+                                    <th scope="row">112</th>
+                                    <td>GMC_Envoy</td>
+                                    <td>Gen**al_Mo*ors</td>
+                                    <td>Oldsmobile_Bravada</td>
+                                    <td>Unknown</td>
+
+                                </tr>
+                                <tr>
+                                    <td>top-1 negative</td>
+                                    <th scope="row">63</th>
+                                    <td>Cadillac_STS-V</td>
+                                    <td>Cadillac</td>
+                                    <td>Cadillac_CTS-V</td>
+                                    <td>Correct</td>
+
+                                </tr>
+                                <tr>
+                                    <td>top-2 negative</td>
+                                    <th scope="row">58</th>
+                                    <td>Subaru_Justy</td>
+                                    <td>Subaru</td>
+                                    <td>Suzuki_Swift</td>
+                                    <td>Correct</td>
+
+                                </tr>
+
+
+                                </tbody>
+
+                            </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="row">
-
-
+                <div id = "test"></div>
             </div>
 
             <!-- end: page -->
