@@ -240,7 +240,7 @@ $(document).on("click", "#be", function () {
 
     $("#etable").find('tbody').append('<tr><th scope="row">601</th>\n' +
         '                                        <td>Fiat_Marea</td>\n' +
-        '                                        <td class="tcerror"General_Motors</td>\n' +
+        '                                        <td class="tcerror">General_Motors</td>\n' +
         '                                        <td>Fiat_Multipla</td></tr>');
 
     $('#fbtable').show();
