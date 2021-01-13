@@ -62,9 +62,6 @@ window.addEventListener("load", () => {
 
 });
 
-$('#exampleModal').on('show.bs.modal', function (event) {
-    //....
-})
 
 $(document).on("click", "#showg", function () {
     draw();
@@ -122,8 +119,10 @@ $(document).on("click", "#loadg", function () {
 
         }
 
-        alert("Done Loading Graph.");
+
     });
+    alert("Done Loading Graph.");
+
 
 
 });
@@ -138,7 +137,7 @@ $(document).on("click", "#be", function () {
         "                                        <th scope=\"col\">Node ID</th>\n" +
         "                                        <th scope=\"col\">Name</th>\n" +
         "                                        <th scope=\"col\">Manufacture</th>\n" +
-        "                                        <th scope=\"col\">RelatedMeanOfTransportation</th>\n" +
+        "                                        <th scope=\"col\">SimilarTypeOfCar</th>\n" +
         "\n" +
         "                                    </tr>\n" +
         "                                    </thead><tbody id=\"etbody\"></tbody>");
@@ -275,13 +274,30 @@ $(document).on('click', '.tid', function () {
 $(document).on('click', '#feedback-submit', function () {
     alert("Embedding Generated.");
     $('#myembedding').show();
+    $('.sppanel').show();
 
 });
 
+$(document).ready(function(){
+    $('.checkb4').click(function() {
+        $('.checkb4').not(this).prop('checked', false);
+    });
+});
 
+$(document).ready(function(){
+    $('.checkb3').click(function() {
+        $('.checkb3').not(this).prop('checked', false);
+    });
+});
 
-$(document).on('click', '#compare', function () {
-    alert("Performance Generated.");
-    $('.sppanel').show();
+$(document).ready(function(){
+    $('.checkb2').click(function() {
+        $('.checkb2').not(this).prop('checked', false);
+    });
+});
 
+$(document).ready(function(){
+    $('.checkb1').click(function() {
+        $('.checkb1').not(this).prop('checked', false);
+    });
 });

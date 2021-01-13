@@ -110,7 +110,7 @@ input:checked + .slider:before {
 
 #ppanel {height: 250px;}
 
-.exampleCheck {margin-left: -50px;}
+.exampleCheck {margin-left: 0px;}
 
 #myembedding {margin-left: -30px; margin-top: -350px;}
 #picture {width: 450px; }

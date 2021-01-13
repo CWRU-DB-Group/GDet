@@ -28,6 +28,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/octopus" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/octopus/assets/javascripts" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/octopus" />
     </key>
@@ -57,7 +60,7 @@
       <workItem from="1608641628213" duration="15049000" />
       <workItem from="1608687237393" duration="32999000" />
       <workItem from="1610246872477" duration="40101000" />
-      <workItem from="1610538270098" duration="18021000" />
+      <workItem from="1610538270098" duration="20113000" />
     </task>
     <servers />
   </component>
