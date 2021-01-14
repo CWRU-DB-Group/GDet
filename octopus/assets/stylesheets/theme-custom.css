@@ -73,10 +73,13 @@ input:checked + .slider:before {
 
 
 #mynetwork {
-    width: 100%;
+    width: 200px;
     height: 400px;
 }
+#mynetwork1 {
 
+
+}
 
 #ntable {
     width: 100%;
