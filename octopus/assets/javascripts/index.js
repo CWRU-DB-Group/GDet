@@ -56,6 +56,25 @@ function draw() {
     };
     network = new vis.Network(container, data, options);
     alert("Done drawing");
+    network.on("stabilizationProgress", function (params) {
+        var maxWidth = 496;
+        var minWidth = 20;
+        var widthFactor = params.iterations / params.total;
+        var width = Math.max(minWidth, maxWidth * widthFactor);
+
+        document.getElementById("bar").style.width = width + "px";
+        document.getElementById("text").innerText =
+            Math.round(widthFactor * 100) + "%";
+    });
+    network.once("stabilizationIterationsDone", function () {
+        document.getElementById("text").innerText = "100%";
+        document.getElementById("bar").style.width = "496px";
+        document.getElementById("loadingBar").style.opacity = 0;
+        // really clean the dom element
+        setTimeout(function () {
+            document.getElementById("loadingBar").style.display = "none";
+        }, 500);
+    });
 }
 
 window.addEventListener("load", () => {
@@ -301,3 +320,4 @@ $(document).ready(function(){
         $('.checkb1').not(this).prop('checked', false);
     });
 });
+

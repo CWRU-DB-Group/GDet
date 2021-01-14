@@ -87,7 +87,7 @@ input:checked + .slider:before {
 
 .bi {margin-top: 5px;}
 
-.tcerror { background-color: #bb1111; color: #171717}
+.tcerror { background-color: #f0ad4e; color: #171717}
 
 #etbody {
         display : block;
@@ -115,3 +115,4 @@ input:checked + .slider:before {
 #myembedding {margin-left: -30px; margin-top: -350px;}
 #picture {width: 450px; }
 #exampleModal2{ margin-top: 100px;}
+
