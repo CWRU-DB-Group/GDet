@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>samizdatco/arbor Basic Graph Example</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+
+<canvas id="mynetwork" width="1000" height="2000"></canvas>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+<script type="text/javascript" src="assets/javascripts/arbor.js"></script>
+<script type="text/javascript" src="assets/javascripts/arbor-graphics.js"></script>
+<script type="text/javascript" src="assets/javascripts/renderer.js"></script>
+<script>
+
+
+
+    $(document).ready(function () {
+        // AJAX in the data file
+        var sys = arbor.ParticleSystem();
+
+
+        $.get('graph_file1.csv', function (data) {
+
+
+            var lines = data.split("\n");
+            alert(lines.length);
+            for (var j = 1; j <1000; j++) {
+
+                var values = lines[j].split(','); // Split up the comma seperated values
+                // We read the key,1st, 2nd and 3rd rows
+                var val = values[0].slice(1, values[0].length - 1);
+
+
+                sys.addNode(val, {'color':'blue','shape':'dot','label':val, 'size': "1"})
+
+
+
+            }
+
+            for (var j = 1000; j < lines.length; j++) {
+
+                var values = lines[j].split(','); // Split up the comma seperated values
+                // We read the key,1st, 2nd and 3rd rows
+                var val1 = values[0].trim();
+
+                var val2 = values[1].trim();
+
+                sys.addEdge(val1,val2);
+
+
+            }
+
+
+        });
+
+        sys.renderer = Renderer("#mynetwork");
+
+
+        alert("Done Loading Graph.");
+
+
+
+    });
+
+
+
+
+
+
+</script>
+</body>
+</html>

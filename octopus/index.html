@@ -37,11 +37,19 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
 
+
     <!-- Head Libs -->
+
+
     <script type="text/javascript" src="assets/javascripts/jquery-3.5.1.min.js"></script>
+
     <script src="assets/vendor/modernizr/modernizr.js"></script>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <script type="text/javascript" src="assets/javascripts/index.js"></script>
+    <script type="text/javascript" src="assets/javascripts/Viva.js"></script>
+    <script type="text/javascript" src="assets/javascripts/Viva-min.js"></script>
+
+
 
 </head>
 <body>
@@ -75,7 +83,7 @@
 
                 <select class="form-select form-select-sm center" id="ds">
                     <option selected class="center">Please select dataset</option>
-                    <option class="center">DBP-Transportation</option>
+                    <option class="center">DBP-Species</option>
                 </select>
             </div>
 
@@ -86,7 +94,7 @@
             </div>
             <div class="form-group  center">
                 <div class="center">
-                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" id="showg">Show Graph</button>
+                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-default" id="showg">Show Subgraph</button>
                 </div>
             </div>
             <div class="form-group  center">
@@ -222,7 +230,7 @@
                                 </div>
 
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div id="myembedding" class="center"><img id = "picture"  src = "animation_transportation.gif"/></div>
+                                    <div id="myembedding" class="center"><img id = "picture"  src = "embedding.png"/></div>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +251,7 @@
 
                         <div class="panel-body">
                             <div id="ntable">
-                                <table class="table table-striped" id="etable">
+                                <table class="table center" id="etable">
 
 
                                 </table>
@@ -268,6 +276,60 @@
                         </header>
 
                         <div class="panel-body">
+                            <div class="row center" id="tpanel">
+
+                                <div id="t-exp">
+                                    <h5>
+                                        Explanation:
+
+                                    </h5>
+                                    <table id = "tr-table" class="table table-striped center" >
+                                        <thead class="thead-dark center">
+
+                                        <ul>
+                                            <li class="cbox"> <div class='box green center'></div>
+                                                <span>Rule Transformation</span>
+
+                                            </li>
+                                            <li class="cbox"><div class='box red center'></div>
+                                                <span>String Transformation</span>
+
+                                            </li>
+                                            <li class="cbox"><div class='box blue center'></div>
+                                                <span>Outlier Transformation</span>
+                                            </li>
+                                        </ul>
+
+                                        </thead>
+
+                                        <thead class="thead-dark center">
+                                        <tr>
+                                            <th class="center" scope="col">NodeID</th>
+                                            <th class="center" scope="col">Wrong Attribute</th>
+                                            <th class="center" scope="col">Wrong Value</th>
+                                            <th class="center" scope="col">Transformation</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id = "tr-body">
+                                        <tr>
+                                            <td>16712</td>
+                                            <td >Kingdom</td>
+                                            <td>A*im**<div class='sbox green center'></div></td>
+                                            <td><a>φ1</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>16712</td>
+                                            <td >Family</td>
+                                            <td>Parylo*/a<div class='sbox red center'></div></td>
+                                            <td><a>φ2</a></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
                             <div class="row center" id="ppanel">
 
                                 <div class="col-lg-6 sppanel" >
@@ -285,14 +347,12 @@
 
                                                 var flotDashSales1Data = [{
                                                     data: [
-                                                        ["1", 0.15],
-                                                        ["2", 0.19],
-                                                        ["3", 0.19],
-                                                        ["4", 0.2],
-                                                        ["5", 0.25],
-                                                        ["6", 0.33],
-                                                        ["7", 0.35],
-                                                        ["8", 0.39]
+                                                        ["5", 0.01],
+                                                        ["10", 0.04],
+                                                        ["15", 0.24],
+                                                        ["20", 0.29],
+                                                        ["25", 0.59],
+                                                        ["30", 0.67]
                                                     ],
                                                     color: "#0088cc"
                                                 }];
@@ -312,7 +372,7 @@
 
                                     </h5>
                                     <div id="ptable">
-                                        <table class="table table-striped center" >
+                                        <table class="table table-striped center" id="pttable">
                                             <thead class="thead-dark">
                                             <tr>
                                                 <th scope="col">Model</th>
@@ -324,21 +384,21 @@
                                             <tbody id="petable">
                                             <tr>
                                                 <th scope="row">GEDet</th>
-                                                <td>0.24</td>
-                                                <td>0.98</td>
-                                                <td>0.39</td>
+                                                <td>0.91</td>
+                                                <td>0.48</td>
+                                                <td>0.63</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">VioDet</th>
-                                                <td>0.27</td>
-                                                <td>0.13</td>
-                                                <td>0.17</td>
+                                                <td>0.85</td>
+                                                <td>0.24</td>
+                                                <td>0.38</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">OutlierDet</th>
-                                                <td>0.17</td>
-                                                <td>0.12</td>
-                                                <td>0.14</td>
+                                                <td>0.35</td>
+                                                <td>0.0.32</td>
+                                                <td>0.34</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -376,8 +436,9 @@
 										<th scope="col"></th>
 										<th scope="col">Node ID</th>
 										<th scope="col">Name</th>
-										<th scope="col">Manufacturer</th>
-										<th scope="col">SimilarTypeOfCar</th>
+										<th scope="col">Order</th>
+										<th scope="col">Kingdom</th>
+                                        <th scope="col">Family</th>
                                         <th scope="col">&#10003; x</th>
 
 
@@ -387,10 +448,11 @@
 									<tbody>
 									<tr>
 										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-										<th scope="row">510</th>
-										<td>Audi_Q3</td>
-										<td>General_Motors</td>
-										<td>Škoda_Yeti</td>
+										<th scope="row">5643</th>
+										<td>Quesnelia_humilis</td>
+										<td>Lepidoptera</td>
+										<td>Plant</td>
+                                        <td>Bromelioideae</td>
                                         <td><div class="exampleCheck">
                                             <input type="checkbox" class="checkb1">
                                             <input type="checkbox" class="checkb1">
@@ -398,35 +460,38 @@
 									</tr>
                                     <tr>
                                         <td><button type="button" id = "evb" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal1">Evaluate</button></td>
-                                        <th scope="row">567</th>
-                                        <td>Isuzu_i-Series</td>
-                                        <td>Ge*e*al_*otors</td>
-                                        <td>Chevrolet_Colorado></td>
+                                        <th scope="row">5672</th>
+                                        <td>Cavanillesia</td>
+                                        <td>Lepidoptera</td>
+                                        <td>Plant</td>
+                                        <td>Malvaceae</td>
                                         <td><div class="exampleCheck">
-                                            <input type="checkbox" class="checkb2">
-                                            <input type="checkbox" class="checkb2">
+                                            <input type="checkbox" class="checkb1">
+                                            <input type="checkbox" class="checkb1">
                                         </div></td>
                                     </tr>
 									<tr>
 										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-										<th scope="row">548</th>
-										<td>Rover_Streetwise</td>
-										<td>General_Motors</td>
-										<td>_25</td>
+                                        <th scope="row">6835</th>
+                                        <td>Pyrrhura</td>
+                                        <td>Parrot</td>
+                                        <td>Animal</td>
+                                        <td>True_parrot</td>
                                         <td><div class="exampleCheck">
-                                            <input type="checkbox" class="checkb3">
-                                            <input type="checkbox" class="checkb3">
+                                            <input type="checkbox" class="checkb1">
+                                            <input type="checkbox" class="checkb1">
                                         </div></td>
 									</tr>
                                     <tr>
                                         <td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-                                        <th scope="row">588</th>
-                                        <td>Fiat_128</td>
-                                        <td>Fiat</td>
-                                        <td>Autobianchi_A111</td>
+                                        <th scope="row">7234</th>
+                                        <td>Clytus_rhamni</td>
+                                        <td>Beetle</td>
+                                        <td>Animal</td>
+                                        <td>Longhorn_beetle</td>
                                         <td><div class="exampleCheck">
-                                            <input type="checkbox" class="checkb4">
-                                            <input type="checkbox" class="checkb4">
+                                            <input type="checkbox" class="checkb1">
+                                            <input type="checkbox" class="checkb1">
                                         </div></td>
                                     </tr>
 
@@ -462,8 +527,9 @@
                                     <th></th>
                                     <th scope="col">Node ID</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Manufacturer</th>
-                                    <th scope="col">RelatedMeanOfTransportation</th>
+                                    <th scope="col">Order</th>
+                                    <th scope="col">Kingdom</th>
+                                    <th scope="col">Family</th>
                                     <th scope="col">Label</th>
 
                                 </tr>
@@ -471,37 +537,41 @@
                                 <tbody>
                                 <tr>
                                     <td>top-1 positive</td>
-                                    <th scope="row">57</th>
-                                    <td>Saturn_Relay</td>
-                                    <td>**neral_Moto*s</td>
-                                    <td>Pontiac_Aztek</td>
+                                    <th scope="row">131</th>
+                                    <td>Drosera_schmutzii</td>
+                                    <td>Lepidoptera</td>
+                                    <td>Plant</td>
+                                    <td>Droseraceae</td>
                                     <td>Error</td>
 
                                 </tr>
                                 <tr>
                                     <td>top-2 positive</td>
-                                    <th scope="row">112</th>
-                                    <td>GMC_Envoy</td>
-                                    <td>Gen**al_Mo*ors</td>
-                                    <td>Oldsmobile_Bravada</td>
+                                    <th scope="row">5653</th>
+                                    <td>Nidularium_serratum</td>
+                                    <td>Lepidoptera</td>
+                                    <td>Plant</td>
+                                    <td>Bromeliaceae</td>
                                     <td>Unknown</td>
 
                                 </tr>
                                 <tr>
                                     <td>top-1 negative</td>
-                                    <th scope="row">63</th>
-                                    <td>Cadillac_STS-V</td>
-                                    <td>Cadillac</td>
-                                    <td>Cadillac_CTS-V</td>
+                                    <th scope="row">8</th>
+                                    <td>Hypnale</td>
+                                    <td>Squamata</td>
+                                    <td>Animal</td>
+                                    <td>Viperidae</td>
                                     <td>Correct</td>
 
                                 </tr>
                                 <tr>
                                     <td>top-2 negative</td>
-                                    <th scope="row">58</th>
-                                    <td>Subaru_Justy</td>
-                                    <td>Subaru</td>
-                                    <td>Suzuki_Swift</td>
+                                    <th scope="row">1287</th>
+                                    <td>Calluella</td>
+                                    <td>Neobatrachia</td>
+                                    <td>Animal</td>
+                                    <td>Microhylidae</td>
                                     <td>Correct</td>
 
                                 </tr>

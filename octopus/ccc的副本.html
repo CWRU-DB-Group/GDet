@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>06. Composite Node.</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+    <script type="text/javascript" src="assets/javascripts/Viva.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            // AJAX in the data file
+            var graph = Viva.Graph.graph();
+
+            var graphics = Viva.Graph.View.svgGraphics(),
+                nodeSize = 10;
+
+
+            $.get('graph_file2.csv', function (data) {
+
+
+                var lines = data.split("\n");
+                alert(lines.length);
+                for (var j = 1; j <5000; j++) {
+
+                    var values = lines[j].split(','); // Split up the comma seperated values
+                    // We read the key,1st, 2nd and 3rd rows
+                    var val = values[0].slice(1, values[0].length - 1);
+
+
+                    graph.addNode(val);
+
+                }
+
+                for (var j = 5000; j < lines.length; j++) {
+
+                    var values = lines[j].split(','); // Split up the comma seperated values
+                    // We read the key,1st, 2nd and 3rd rows
+                    var val1 = values[0].trim();
+
+                    var val2 = values[1].trim();
+
+                   graph.addLink(val1,val2);
+
+                }
+
+
+            });
+
+            graphics.node(function(node) {
+                // This time it's a group of elements: http://www.w3.org/TR/SVG/struct.html#Groups
+                var ui = Viva.Graph.svg('g'),
+                    // Create SVG text element with user id as content
+                    svgText = Viva.Graph.svg('text').attr('y', '-4px').text(node.id),
+                    img = Viva.Graph.svg('image')
+                        .attr('width', nodeSize)
+                        .attr('height', nodeSize)
+                        .link('1d.png');
+
+                ui.append(svgText);
+                ui.append(img);
+                return ui;
+            }).placeNode(function(nodeUI, pos) {
+                // 'g' element doesn't have convenient (x,y) attributes, instead
+                // we have to deal with transforms: http://www.w3.org/TR/SVG/coords.html#SVGGlobalTransformAttribute
+                nodeUI.attr('transform',
+                    'translate(' +
+                    (pos.x - nodeSize/2) + ',' + (pos.y - nodeSize/2) +
+                    ')');
+                nodeUI.attr('font-size',8);
+            });
+
+            // Render the graph
+            var renderer = Viva.Graph.View.renderer(graph, {
+                container: document.getElementById('mynetwork'),
+                graphics : graphics
+            });
+            renderer.run();
+
+
+            alert("Done Loading Graph.");
+
+
+
+        });
+
+
+    </script>
+
+    <style type="text/css" media="screen">
+        html, body, svg { width: 100%; height: 100%;}
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+<div id = 'mynetwork'></div>
+</body>
+</html>

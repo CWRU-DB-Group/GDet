@@ -1,7 +1,11 @@
+
+
+
 var nodes = [];
 var edges = [];
 var network = null;
 var flag = false;
+var dict = {};
 
 var LENGTH_MAIN = 350,
     LENGTH_SERVER = 10,
@@ -27,14 +31,12 @@ function draw() {
     };
     var options = {
 
-        layout: {
-            improvedLayout: false,
-        },
+        interaction: { hover: true },
 
         nodes: {
             scaling: {
-                min: 8,
-                max: 16,
+                min: 10,
+                max: 50,
             },
 
         },
@@ -45,75 +47,169 @@ function draw() {
 
         groups: {
             error: {
-                shape: "triangle",
-                color: "##C5000B", // orange
+                shape: "dot",
+                color: RED, // orange
+                size: 20,
             },
             correct: {
                 shape: "dot",
                 color: "#2B7CE9", // blue
+                size: 10,
             },
 
         },
+
     };
     network = new vis.Network(container, data, options);
+    network.on("hoverNode", function (params) {
+        console.log("hoverNode Event:", params);
+    });
+
     alert("Done drawing");
 
+
+
+
 }
-
-window.addEventListener("load", () => {
-
-});
-
-
 
 
 $(document).on("click", "#showg", function () {
     draw();
+    alert("Subgraph Generated!");
 });
 
-$(document).on("click", "#evb", function () {
 
-    setTimeout(function(){
 
-    },5000);
-
-});
-
-$(document).ready(function () {
-    $('#fbtable').hide();
-    $('#fbsubmit').hide();
-    $('#myembedding').hide();
-    $('.sppanel').hide();
-});
 
 $(document).on("click", "#loadg", function () {
-    // AJAX in the data file
 
-    $.get('transportation_node_dirty.csv', function (data) {
+    var graph = Viva.Graph.graph();
+
+    var graphics = Viva.Graph.View.svgGraphics(),
+        nodeSize = 10;
+
+    $("#mynetwork").empty();
+    $.get('graph_file2.csv', function (data) {
 
 
         var lines = data.split("\n");
         alert(lines.length);
-        for (var j = 1; j < 637; j++) {
+        for (var j = 1; j <5000; j++) {
 
             var values = lines[j].split(','); // Split up the comma seperated values
             // We read the key,1st, 2nd and 3rd rows
             var val = values[0].slice(1, values[0].length - 1);
 
 
-            nodes.push({
-                id: val,
-                label: val,
-                group: "correct",
-                value: 5,
-                font: {
-                    size: 50,
-                },
-            });
+            graph.addNode(val);
 
         }
 
-        for (var j = 637; j < lines.length; j++) {
+        for (var j = 5000; j < lines.length; j++) {
+
+            var values = lines[j].split(','); // Split up the comma seperated values
+            // We read the key,1st, 2nd and 3rd rows
+            var val1 = values[0].trim();
+
+            var val2 = values[1].trim();
+
+            graph.addLink(val1,val2);
+
+        }
+
+
+    });
+
+    graphics.node(function(node) {
+        // This time it's a group of elements: http://www.w3.org/TR/SVG/struct.html#Groups
+        var ui = Viva.Graph.svg('g'),
+            // Create SVG text element with user id as content
+            svgText = Viva.Graph.svg('text').attr('y', '-4px').text(node.id),
+            img = Viva.Graph.svg('image')
+                .attr('width', nodeSize)
+                .attr('height', nodeSize)
+                .link('1d.png');
+
+        ui.append(svgText);
+        ui.append(img);
+        return ui;
+    }).placeNode(function(nodeUI, pos) {
+        // 'g' element doesn't have convenient (x,y) attributes, instead
+        // we have to deal with transforms: http://www.w3.org/TR/SVG/coords.html#SVGGlobalTransformAttribute
+        nodeUI.attr('transform',
+            'translate(' +
+            (pos.x - nodeSize/2) + ',' + (pos.y - nodeSize/2) +
+            ')');
+        nodeUI.attr('font-size',8);
+    });
+
+    // Render the graph
+    var renderer = Viva.Graph.View.renderer(graph, {
+        container: document.getElementById('mynetwork'),
+        graphics : graphics
+    });
+    renderer.run();
+
+
+    alert("Done loading and showing Data Graph.");
+
+
+
+});
+
+$(document).on("click", "#16712", function () {
+
+    $("#mynetwork").empty();
+    $.get('graph_file.csv', function (data) {
+
+
+        var lines = data.split("\n");
+        alert(lines.length);
+        for (var j = 0; j < 50; j++) {
+
+            var values = lines[j].split(','); // Split up the comma seperated values
+            // We read the key,1st, 2nd and 3rd rows
+            var val = values[0].slice(1, values[0].length - 1);
+
+            if (val == 16712) {
+                nodes.push({
+                    id: val,
+                    label: val,
+                    group: "error",
+                    value: 5,
+                    font: {
+                        size: 70,
+                    },
+                    title : "Name: " + values[1].trim().slice(2, values[1].length - 3) + "\n" +
+                        "Order: " + values[2].trim().slice(2, values[2].length - 3) + "\n" +
+                        "Kingdom: " + values[3].trim().slice(2, values[3].length - 3) + "\n" +
+                        "Family: " + values[4].trim().slice(2, values[4].length - 3) + "\n",
+
+                });
+            } else {
+                nodes.push({
+                    id: val,
+                    label: val,
+                    group: "correct",
+                    value: 5,
+                    font: {
+                        size: 40,
+                    },
+                    title : "Name: " + values[1].trim().slice(2, values[1].length - 3) + "\n" +
+                        "Order: " + values[2].trim().slice(2, values[2].length - 3) + "\n" +
+                        "Kingdom: " + values[3].trim().slice(2, values[3].length - 3) + "\n" +
+                        "Family: " + values[4].trim().slice(2, values[4].length - 3) + "\n",
+                });
+            }
+
+            dict[val] = values[1].trim().slice(2, values[1].length - 3) + " " + values[2].trim().slice(2, values[2].length - 3) +
+                " " + values[3].trim().slice(2, values[3].length - 3) +
+                " " + values[4].trim().slice(2, values[4].length - 3);
+
+
+        }
+
+        for (var j = 50; j < lines.length; j++) {
 
             var values = lines[j].split(','); // Split up the comma seperated values
             // We read the key,1st, 2nd and 3rd rows
@@ -133,11 +229,32 @@ $(document).on("click", "#loadg", function () {
 
 
     });
+
     alert("Done Loading Graph.");
 
 
+});
+
+$(document).on("click", "#evb", function () {
+
+    setTimeout(function(){
+
+    },500);
 
 });
+
+$(document).ready(function () {
+    $('#fbtable').hide();
+    $('#fbsubmit').hide();
+    $('#myembedding').hide();
+    $('.sppanel').hide();
+    $('#t-exp').hide();
+});
+
+
+
+
+
 
 
 $(document).on("click", "#be", function () {
@@ -146,129 +263,83 @@ $(document).on("click", "#be", function () {
     if (!flag) {
 
         setTimeout(function(){
-            $("#etable").append(" <thead class=\"thead-dark\">\n" +
+            $("#etable").append(" <thead id = \"ethead\" class=\"thead-dark\" >\n" +
                 "                                    <tr>\n" +
-                "\n" +
-                "                                        <th scope=\"col\">Node ID</th>\n" +
-                "                                        <th scope=\"col\">Name</th>\n" +
-                "                                        <th scope=\"col\">Manufacture</th>\n" +
-                "                                        <th scope=\"col\">SimilarTypeOfCar</th>\n" +
-                "\n" +
+                "                                        <th  scope=\"col\">Node ID</th>\n" +
+                "                                        <th  scope=\"col\">Name</th>\n" +
+                "                                        <th  scope=\"col\">Order</th>\n" +
+                "                                        <th  scope=\"col\">Kingdom</th>\n" +
+                "                                        <th  scope=\"col\">Family</th>\n" +
                 "                                    </tr>\n" +
                 "                                    </thead><tbody id=\"etbody\"></tbody>");
 
-            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">505</th>\n' +
-                '                                        <td>Toyota_Premio</td>\n' +
-                '                                        <td class="tcerror">General_Motors</td>\n' +
-                '                                        <td >Toyota_Prius</td></tr>');
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13334</th>\n' +
+                '                                        <td>Danaini</td>\n' +
+                '                                        <td>Lepidoptera</td>\n' +
+                '                                        <td class="tcerror">A*i*a*</td>\n' +
+                '                                        <td>Nymphalidae</td></tr>');
+
+            $("#etable").find('tbody').append('<tr ><th id =\"16712\" class="tid" scope="row">16712</th>\n' +
+                '                                        <td>Pyralinae</td>\n' +
+                '                                        <td>Lepidoptera</td>\n' +
+                '                                        <td class="tcerror">A*im**</td>' +
+                '                                        <td class="tcerror">Pyraloi*/a</td></tr>');
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">16543</th>\n' +
+                '                                        <td>Aurantioideae</td>\n' +
+                '                                        <td class="tcerror">Lepidoptera</td>\n' +
+                '                                        <td>Plant</td>\n' +
+                '                                        <td>Rutaceae</td></tr>');
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13839</th>\n' +
+                '                                        <td>Larentiini</td>\n' +
+                '                                        <td>Lepidoptera</td>\n' +
+                '                                        <td class="tcerror">*n**al</td>\n' +
+                '                                        <td>Geometer_moth</td></tr>');
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13188</th>\n' +
+                '                                        <td>Mogera</td>\n' +
+                '                                        <td>Soricomorpha</td>\n' +
+                '                                        <td class="tcerror">***mal</td>\n' +
+                '                                        <td>Talpidae</td></tr>');
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">17413</th>\n' +
+                '                                        <td>Andrenidae</td>\n' +
+                '                                        <td>Apocrita</td>\n' +
+                '                                        <td class="tcerror">***mal</td>\n' +
+                '                                        <td>Apoidea</td></tr>');
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13334</th>\n' +
+                '                                        <td>Danaini</td>\n' +
+                '                                        <td>Lepidoptera</td>\n' +
+                '                                        <td class="tcerror">A*i*a*</td>\n' +
+                '                                        <td>Nymphalidae</td></tr>');
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">17082</th>\n' +
+                '                                        <td>Xenodontinae</td>\n' +
+                '                                        <td>Squamata</td>\n' +
+                '                                        <td class="tcerror">A*im**</td>\n' +
+                '                                        <td>Colubridae</td></tr>');
+
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">16194</th>\n' +
+                '                                        <td>Nolinae</td>\n' +
+                '                                        <td>Lepidoptera</td>\n' +
+                '                                        <td class="tcerror">A**ma*</td>\n' +
+                '                                        <td>Noctuoidea</td></tr>');
+            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">14608</th>\n' +
+                '                                        <td>Chrysopeleiinae</td>\n' +
+                '                                        <td>Lepidoptera</td>\n' +
+                '                                        <td class="tcerror">An*ma*</td>\n' +
+                '                                        <td>Cosmopterigidae</td></tr>');
 
 
-            $("#etable").find('tbody').append('<tr><th scope="row">457</th>\n' +
-                '                                        <td>Toyota_Cressida</td>\n' +
-                '                                        <td class="tcerror">General_Motors</td>\n' +
-                '                                        <td>Toyota_Mark_II</td></tr>');
 
-            $("#etable").find('tbody').append('<tr><th scope="row">571</th>\n' +
-                '                                        <td>Toyota_Venza</td>\n' +
-                '                                        <td class="tcerror">General_Motors</td>\n' +
-                '                                        <td>Lexus_ES</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">617</th>\n' +
-                '                                        <td class="tcerror">Cadillac_Catera</td>\n' +
-                '                                        <td >General_Motors</td>\n' +
-                '                                        <td>Holden_Commodore</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">624</th>\n' +
-                '                                        <td>Nissan_Rogue</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">Nissan_X-Trail</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">547</th>\n' +
-                '                                        <td>Nissan_Skyline_GT-R</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">Nissan_Skyline</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">512</th>\n' +
-                '                                        <td>Toyota_Chaser</td>\n' +
-                '                                        <td class="tcerror">General_Motors</td>\n' +
-                '                                        <td>Toyota_Cressida</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">514</th>\n' +
-                '                                        <td class="tcerror">Dodge_Shadow</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td>Shelby_CSX</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">611</th>\n' +
-                '                                        <td>Lancia_Dedra</td>\n' +
-                '                                        <td class="tcerror">General_Motors</td>\n' +
-                '                                        <td>Alfa_Romeo_155</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">610</th>\n' +
-                '                                        <td class="tcerror">Buick_Reatta</td>\n' +
-                '                                        <td>*eneral_Mot**s</td>\n' +
-                '                                        <td>Cadillac_Allanté</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">486</th>\n' +
-                '                                        <td>Chrysler_Pacifica</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">_Country</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">596</th>\n' +
-                '                                        <td>BMW_328</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">BMW_326</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">532</th>\n' +
-                '                                        <td>Nissan_350Z</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">Infiniti_G</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">566</th>\n' +
-                '                                        <td>Honda_Civic</td>\n' +
-                '                                        <td class="tcerror">General_Motors</td>\n' +
-                '                                        <td>Honda_City</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">465</th>\n' +
-                '                                        <td>Volkswagen_Golf_Mk5</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">SEAT_Altea</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">456</th>\n' +
-                '                                        <td>Holden_Monaro</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">Pontiac_GTO</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">575</th>\n' +
-                '                                        <td >Bentley_Continental_R</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">Bentley_Azure</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">604</th>\n' +
-                '                                        <td>Suzuki_Wagon_R</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td class="tcerror">Changhe</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">586</th>\n' +
-                '                                        <td class="tcerror">Perodua_Rusa</td>\n' +
-                '                                        <td>General_Motors</td>\n' +
-                '                                        <td>Daihatsu_Hijet</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th scope="row">601</th>\n' +
-                '                                        <td>Fiat_Marea</td>\n' +
-                '                                        <td class="tcerror">General_Motors</td>\n' +
-                '                                        <td>Fiat_Multipla</td></tr>');
-
-        },15000);
+        },500);
 
 
-    } else {
+    }
+    else {
 
         setTimeout(function(){
 
             $('#fbtable').show();
             $('#fbsubmit').show();
 
-        },8000);
+        },500);
 
     }
 
@@ -276,7 +347,6 @@ $(document).on("click", "#be", function () {
 
 
 });
-
 
 // code to read selected table row cell data (values).
 // $(document).on('click', '.tid', function () {
@@ -300,6 +370,9 @@ $(document).on("click", "#be", function () {
 //
 // });
 
+
+
+
 $(document).on('click', '#feedback-submit', function () {
 
     setTimeout(function(){
@@ -307,8 +380,10 @@ $(document).on('click', '#feedback-submit', function () {
         alert("Embedding Generated.");
         $('#myembedding').show();
         $('.sppanel').show();
+        $('#t-exp').show();
 
-    },40000);
+
+    },500);
 
 
 });
@@ -339,9 +414,10 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-$('#ac').change(function() {
-    // this will contain a reference to the checkbox
-   flag = $(this).is(':checked');
-});
+    $('#ac').change(function() {
+        // this will contain a reference to the checkbox
+        flag = $(this).is(':checked');
+    });
 
 });
+

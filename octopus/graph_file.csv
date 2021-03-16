@@ -1,0 +1,111 @@
+"263", "<Glyptoteles_leucacrinella>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"980", "<Ocrasa>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"1096", "<Unadilla_bidensana>", "<Lepidoptera>", "<*nim**>", "<Pyralidae>"
+"1398", "<Merulempista>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"1887", "<Zamagiria>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"2415", "<Ephestia_elutella>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"2859", "<Australephestiodes>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"3254", "<Homoeosoma_albosparsum>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"3469", "<Phycita>", "<Lepidoptera>", "<Ani**l>", "<Phycitini>"
+"3517", "<Anerastiini>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"3661", "<Endotricha_flammealis>", "<Lepidoptera>", "<Animal>", "<Endotrichini>"
+"3900", "<Phycitini>", "<Lepidoptera>", "<*nima*>", "<Pyralidae>"
+"4183", "<Hypsopygia_costalis>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"4966", "<Ephestia>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"5045", "<Almond_Moth>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"5104", "<Aglossa_pinguinalis>", "<Lepidoptera>", "<Animal>", "<Pyralini>"
+"5245", "<Cryptoblabes>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"5293", "<Phycitinae>", "<Lepidoptera>", "<An*m*l>", "<Pyraloidea>"
+"5314", "<Aglossa_cuprina>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"5574", "<Mediterranean_Flour_Moth>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"6604", "<Assara>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"6839", "<Mapeta>", "<Lepidoptera>", "<A*i**l>", "<Pyralinae>"
+"6853", "<Ctenomeristis_almella>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"7321", "<Pempelia_genistella>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"7692", "<Pempelia_heringii>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"8482", "<Abachausia>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"8952", "<Ernophthora>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"8976", "<Myelois>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"9541", "<Pyralini>", "<Lepidoptera>", "<*ni*al>", "<Pyralinae>"
+"9740", "<Pyralidae>", "<Lepidoptera>", "<A**m*l>", "<Pyraloidea>"
+"10049", "<Unadilla_humeralis>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"10227", "<Acrobasis>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"10527", "<Melitara_prodenialis>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"11225", "<Hypsopygia>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"11535", "<Assara_albicostalis>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"11995", "<Synaphe_punctalis>", "<Lepidoptera>", "<Animal>", "<Pyralini>"
+"12492", "<Ctenomeristis>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"13193", "<Ectomyelois>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"13314", "<Aglossa_caprealis>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"13584", "<Cactoblastis_cactorum>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"13892", "<Goya_stictella>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"14196", "<Indianmeal_Moth>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"14320", "<Melitara_dentata>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"15613", "<Aglossa>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"16007", "<Ectomyelois_ceratoniae>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+"16008", "<Cadra>", "<Lepidoptera>", "<Animal>", "<Phycitinae>"
+"16665", "<Pyralis_pictalis>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"16712", "<Pyralinae>", "<Lepidoptera>", "<A*im**>", "<Pyraloi*/a>"
+"16961", "<Assara_holophragma>", "<Lepidoptera>", "<Animal>", "<Pyralidae>"
+"17155", "<Apomyelois>", "<Lepidoptera>", "<Animal>", "<Phycitini>"
+263, 3900
+980, 9541
+980, 16712
+1096, 3900
+1398, 9740
+1887, 9740
+2415, 9740
+2859, 9740
+3254, 9740
+3469, 5293
+3469, 9740
+3517, 9740
+3661, 9740
+4183, 9541
+4966, 3900
+4966, 9740
+5045, 3900
+5104, 9740
+5245, 5293
+5293, 9740
+5314, 9541
+5574, 9740
+6604, 3900
+6604, 5293
+6839, 9541
+6839, 9740
+6853, 9740
+7321, 3900
+7692, 3900
+8482, 9740
+8952, 9740
+8976, 3900
+8976, 5293
+9541, 9740
+10049, 9740
+10227, 3900
+10227, 5293
+10527, 3900
+11225, 9541
+11225, 16712
+11535, 9740
+11995, 9740
+12492, 5293
+12492, 9740
+13193, 3900
+13193, 9740
+13314, 9541
+13584, 9740
+13892, 9740
+14196, 9740
+14320, 3900
+15613, 9541
+15613, 16712
+16007, 9740
+16008, 3900
+16008, 9740
+16665, 9541
+16712, 9740
+16961, 3900
+17155, 5293
+17155, 9740
