@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5223f30-84ce-4da4-bc5e-b9e0d1fff587" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/octopus/assets/javascripts/Viva-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/octopus/assets/javascripts/Viva.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/octopus/assets/javascripts/arbor-graphics.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/octopus/assets/javascripts/arbor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/octopus/assets/javascripts/renderer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/octopus/ccc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/octopus/embedding.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/octopus/graph_file2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/octopus/assets/javascripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/octopus/assets/javascripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/octopus/assets/stylesheets/theme-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/octopus/assets/stylesheets/theme-custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/octopus/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/octopus/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/octopus/transportation_edges.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/octopus/transportation_node_dirty.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +75,7 @@
       <workItem from="1615348652259" duration="202000" />
       <workItem from="1615349292071" duration="416000" />
       <workItem from="1615402623925" duration="59803000" />
-      <workItem from="1615871623132" duration="10425000" />
+      <workItem from="1615871623132" duration="11059000" />
     </task>
     <servers />
   </component>
@@ -106,10 +94,11 @@
       <screen x="1680" y="23" width="1680" height="1027" />
     </state>
     <state x="2390" y="312" key="#index.html/1680.23.1680.1027/0.23.1680.977@1680.23.1680.1027" timestamp="1615715042553" />
-    <state x="308" y="23" width="1242" height="957" key="dock-window-1" timestamp="1615890740421">
-      <screen x="0" y="23" width="1680" height="977" />
+    <state x="1786" y="92" width="1242" height="957" key="dock-window-1" timestamp="1615928969898">
+      <screen x="1680" y="23" width="1680" height="1027" />
     </state>
     <state x="308" y="23" width="1242" height="957" key="dock-window-1/1680.23.1680.1027/0.23.1680.977@0.23.1680.977" timestamp="1615890740421" />
+    <state x="1786" y="92" width="1242" height="957" key="dock-window-1/1680.23.1680.1027/0.23.1680.977@1680.23.1680.1027" timestamp="1615928969898" />
     <state x="320" y="45" width="1245" height="959" key="dock-window-1/1680.23.1680.1027/0.23.1680.979@0.23.1680.979" timestamp="1615524589701" />
     <state x="1920" y="148" width="1245" height="963" key="dock-window-1/1680.23.1680.1027/0.23.1680.983@0.23.1680.983" timestamp="1610534200713" />
     <state x="553" y="238" width="670" height="679" key="search.everywhere.popup" timestamp="1610259329609">

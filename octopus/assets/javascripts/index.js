@@ -76,6 +76,7 @@ function draw() {
 $(document).on("click", "#showg", function () {
     draw();
     alert("Subgraph Generated!");
+    $('#t-exp').show();
 });
 
 
