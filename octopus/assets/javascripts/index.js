@@ -375,7 +375,7 @@ $(document).on("click", "#be", function () {
 
 
 $(document).on('click', '#feedback-submit', function () {
-
+    alert("Please waiting!");
     setTimeout(function(){
 
         alert("Embedding Generated.");
@@ -384,7 +384,7 @@ $(document).on('click', '#feedback-submit', function () {
         $('#t-exp').show();
 
 
-    },500);
+    },20000);
 
 
 });
