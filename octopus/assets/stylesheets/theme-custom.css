@@ -199,3 +199,7 @@ svg { width: 100%; height: 100%;}
 
 #salesSelectorItems{margin-top: 40px;}
 #fhead{margin-top: 40px;}
+
+span img:hover {
+    opacity: .5;
+}

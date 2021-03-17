@@ -75,7 +75,6 @@ function draw() {
 
 $(document).on("click", "#showg", function () {
     draw();
-    alert("Subgraph Generated!");
     $('#t-exp').show();
 });
 
@@ -236,14 +235,6 @@ $(document).on("click", "#16712", function () {
 
 });
 
-$(document).on("click", "#evb", function () {
-
-    setTimeout(function(){
-
-    },500);
-
-});
-
 $(document).ready(function () {
     $('#fbtable').hide();
     $('#fbsubmit').hide();
@@ -340,7 +331,7 @@ $(document).on("click", "#be", function () {
             $('#fbtable').show();
             $('#fbsubmit').show();
 
-        },20000);
+        },200);
 
     }
 
@@ -378,13 +369,12 @@ $(document).on('click', '#feedback-submit', function () {
     alert("Please waiting!");
     setTimeout(function(){
 
-        alert("Embedding Generated.");
         $('#myembedding').show();
         $('.sppanel').show();
         $('#t-exp').show();
 
 
-    },200);
+    },20000);
 
 
 });

@@ -271,7 +271,7 @@
                                 <a href="#" class="fa fa-caret-down"></a>
                                 <a href="#" class="fa fa-times"></a>
                             </div>
-                            <h2 class="panel-title">Performance</h2>
+                            <h2 class="panel-title">Result Analysis</h2>
                             <p class="panel-subtitle"></p>
                         </header>
 
@@ -279,24 +279,21 @@
                             <div class="row center" id="tpanel">
 
                                 <div id="t-exp">
-                                    <h5>
-                                        Explanation:
 
-                                    </h5>
                                     <table id = "tr-table" class="table table-striped center" >
                                         <thead class="thead-dark center">
 
                                         <ul>
                                             <li class="cbox"> <div class='box green center'></div>
-                                                <span>Rule Transformation</span>
+                                                <span>DC Constraint</span>
 
                                             </li>
                                             <li class="cbox"><div class='box red center'></div>
-                                                <span>String Transformation</span>
+                                                <span>String Noise</span>
 
                                             </li>
                                             <li class="cbox"><div class='box blue center'></div>
-                                                <span>Outlier Transformation</span>
+                                                <span>Outlier</span>
                                             </li>
                                         </ul>
 
@@ -316,7 +313,7 @@
                                             <td>16712</td>
                                             <td >Kingdom</td>
                                             <td>A*im**<div class='sbox green center'></div></td>
-                                            <td><a>φ1</a></td>
+                                            <td><a>t1.json</a></td>
                                             <td>Animal</td>
                                         </tr>
 
@@ -324,7 +321,7 @@
                                             <td>16712</td>
                                             <td >Kingdom</td>
                                             <td>A*im**<div class='sbox red center'></div></td>
-                                            <td><a>φ2</a></td>
+                                            <td><a>t2.json</a></td>
                                             <td>Animal</td>
                                         </tr>
 
@@ -332,7 +329,7 @@
                                             <td>16712</td>
                                             <td >Family</td>
                                             <td>Parylo*/a<div class='sbox blue center'></div></td>
-                                            <td><a>φ3</a></td>
+                                            <td><a>t3.json</a></td>
                                             <td>Pyraloidea</td>
                                         </tr>
 
@@ -428,7 +425,7 @@
                 </div>
 
 				<div class="col-md-6">
-					<section class="panel">
+					<section class="panel center">
 
 						<header class="panel-heading">
 							<div class="panel-actions">
@@ -439,18 +436,17 @@
 							<p class="panel-subtitle"></p>
 						</header>
 
-						<div class="panel-body">
-							<div id="fbpanel">
-								<table class="table table-striped" id="fbtable">
+						<div class="panel-body center">
+							<div id="fbpanel center">
+								<table class="table table-striped center" id="fbtable">
 									<thead class="thead-dark">
 									<tr>
-										<th scope="col"></th>
 										<th scope="col">Node ID</th>
 										<th scope="col">Name</th>
 										<th scope="col">Order</th>
 										<th scope="col">Kingdom</th>
                                         <th scope="col">Family</th>
-                                        <th scope="col">&#10003; x</th>
+                                        <th scope="col">Error?</th>
 
 
 
@@ -458,50 +454,43 @@
 									</thead>
 									<tbody>
 									<tr>
-										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-										<th scope="row">5643</th>
+                                        <th scope="row">5643<span><img width="15px" height="15px" src="info.png"/></span></th>
 										<td>Quesnelia_humilis</td>
 										<td>Lepidoptera</td>
 										<td>Plant</td>
                                         <td>Bromelioideae</td>
                                         <td><div class="exampleCheck">
                                             <input type="checkbox" class="checkb1">
-                                            <input type="checkbox" class="checkb1">
                                         </div></td>
 									</tr>
                                     <tr>
-                                        <td><button type="button" id = "evb" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal1">Evaluate</button></td>
-                                        <th scope="row">5672</th>
+
+                                        <th scope="row">5672<span data-toggle="modal"  data-target="#exampleModal1"><img  width="15px" height="15px" src="info.png"/></span></th>
                                         <td>Cavanillesia</td>
                                         <td>Lepidoptera</td>
                                         <td>Plant</td>
                                         <td>Malvaceae</td>
                                         <td><div class="exampleCheck">
                                             <input type="checkbox" class="checkb2">
-                                            <input type="checkbox" class="checkb2">
                                         </div></td>
                                     </tr>
 									<tr>
-										<td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-                                        <th scope="row">6835</th>
+                                        <th scope="row">6835<span><img width="15px" height="15px" src="info.png"/></span></th>
                                         <td>Pyrrhura</td>
                                         <td>Parrot</td>
                                         <td>Animal</td>
                                         <td>True_parrot</td>
                                         <td><div class="exampleCheck">
                                             <input type="checkbox" class="checkb3">
-                                            <input type="checkbox" class="checkb3">
                                         </div></td>
 									</tr>
                                     <tr>
-                                        <td><button type="button" class="btn btn-secondary btn-sm">Evaluate</button></td>
-                                        <th scope="row">7234</th>
+                                        <th scope="row">7234<span><img width="15px" height="15px" src="info.png"/></span></th>
                                         <td>Clytus_rhamni</td>
                                         <td>Beetle</td>
                                         <td>Animal</td>
                                         <td>Longhorn_beetle</td>
                                         <td><div class="exampleCheck">
-                                            <input type="checkbox" class="checkb4">
                                             <input type="checkbox" class="checkb4">
                                         </div></td>
                                     </tr>
@@ -525,7 +514,7 @@
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel1">Suggestions based on 567</h5>
+                            <h5 class="modal-title" id="exampleModalLabel1">Suggestions based on 5672</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
