@@ -340,7 +340,7 @@ $(document).on("click", "#be", function () {
             $('#fbtable').show();
             $('#fbsubmit').show();
 
-        },500);
+        },20000);
 
     }
 
@@ -384,7 +384,7 @@ $(document).on('click', '#feedback-submit', function () {
         $('#t-exp').show();
 
 
-    },20000);
+    },200);
 
 
 });
