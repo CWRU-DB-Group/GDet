@@ -268,14 +268,14 @@ $(document).on("click", "#be", function () {
             $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13334</th>\n' +
                 '                                        <td>Danaini</td>\n' +
                 '                                        <td>Lepidoptera</td>\n' +
-                '                                        <td class="tcerror">A*i*a*</td>\n' +
+                '                                        <td class="tcerror">Anitaw</td>\n' +
                 '                                        <td>Nymphalidae</td></tr>');
 
             $("#etable").find('tbody').append('<tr ><th id =\"16712\" class="tid" scope="row">16712</th>\n' +
                 '                                        <td>Pyralinae</td>\n' +
                 '                                        <td>Lepidoptera</td>\n' +
-                '                                        <td class="tcerror">A*im**</td>' +
-                '                                        <td class="tcerror">Pyraloi*/a</td></tr>');
+                '                                        <td class="tcerror">Azimal</td>' +
+                '                                        <td class="tcerror">Pyraloit/a</td></tr>');
             $("#etable").find('tbody').append('<tr><th class="tid" scope="row">16543</th>\n' +
                 '                                        <td>Aurantioideae</td>\n' +
                 '                                        <td class="tcerror">Lepidoptera</td>\n' +
@@ -284,39 +284,39 @@ $(document).on("click", "#be", function () {
             $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13839</th>\n' +
                 '                                        <td>Larentiini</td>\n' +
                 '                                        <td>Lepidoptera</td>\n' +
-                '                                        <td class="tcerror">*n**al</td>\n' +
+                '                                        <td class="tcerror">Banimal</td>\n' +
                 '                                        <td>Geometer_moth</td></tr>');
             $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13188</th>\n' +
                 '                                        <td>Mogera</td>\n' +
                 '                                        <td>Soricomorpha</td>\n' +
-                '                                        <td class="tcerror">***mal</td>\n' +
+                '                                        <td class="tcerror">Antmal</td>\n' +
                 '                                        <td>Talpidae</td></tr>');
-            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">17413</th>\n' +
-                '                                        <td>Andrenidae</td>\n' +
-                '                                        <td>Apocrita</td>\n' +
-                '                                        <td class="tcerror">***mal</td>\n' +
-                '                                        <td>Apoidea</td></tr>');
-            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13334</th>\n' +
-                '                                        <td>Danaini</td>\n' +
-                '                                        <td>Lepidoptera</td>\n' +
-                '                                        <td class="tcerror">A*i*a*</td>\n' +
-                '                                        <td>Nymphalidae</td></tr>');
-            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">17082</th>\n' +
-                '                                        <td>Xenodontinae</td>\n' +
-                '                                        <td>Squamata</td>\n' +
-                '                                        <td class="tcerror">A*im**</td>\n' +
-                '                                        <td>Colubridae</td></tr>');
-
-            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">16194</th>\n' +
-                '                                        <td>Nolinae</td>\n' +
-                '                                        <td>Lepidoptera</td>\n' +
-                '                                        <td class="tcerror">A**ma*</td>\n' +
-                '                                        <td>Noctuoidea</td></tr>');
-            $("#etable").find('tbody').append('<tr><th class="tid" scope="row">14608</th>\n' +
-                '                                        <td>Chrysopeleiinae</td>\n' +
-                '                                        <td>Lepidoptera</td>\n' +
-                '                                        <td class="tcerror">An*ma*</td>\n' +
-                '                                        <td>Cosmopterigidae</td></tr>');
+            // $("#etable").find('tbody').append('<tr><th class="tid" scope="row">17413</th>\n' +
+            //     '                                        <td>Andrenidae</td>\n' +
+            //     '                                        <td>Apocrita</td>\n' +
+            //     '                                        <td class="tcerror">***mal</td>\n' +
+            //     '                                        <td>Apoidea</td></tr>');
+            // $("#etable").find('tbody').append('<tr><th class="tid" scope="row">13334</th>\n' +
+            //     '                                        <td>Danaini</td>\n' +
+            //     '                                        <td>Lepidoptera</td>\n' +
+            //     '                                        <td class="tcerror">A*i*a*</td>\n' +
+            //     '                                        <td>Nymphalidae</td></tr>');
+            // $("#etable").find('tbody').append('<tr><th class="tid" scope="row">17082</th>\n' +
+            //     '                                        <td>Xenodontinae</td>\n' +
+            //     '                                        <td>Squamata</td>\n' +
+            //     '                                        <td class="tcerror">A*im**</td>\n' +
+            //     '                                        <td>Colubridae</td></tr>');
+            //
+            // $("#etable").find('tbody').append('<tr><th class="tid" scope="row">16194</th>\n' +
+            //     '                                        <td>Nolinae</td>\n' +
+            //     '                                        <td>Lepidoptera</td>\n' +
+            //     '                                        <td class="tcerror">A**ma*</td>\n' +
+            //     '                                        <td>Noctuoidea</td></tr>');
+            // $("#etable").find('tbody').append('<tr><th class="tid" scope="row">14608</th>\n' +
+            //     '                                        <td>Chrysopeleiinae</td>\n' +
+            //     '                                        <td>Lepidoptera</td>\n' +
+            //     '                                        <td class="tcerror">An*ma*</td>\n' +
+            //     '                                        <td>Cosmopterigidae</td></tr>');
 
 
 
