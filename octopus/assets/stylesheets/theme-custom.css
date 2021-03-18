@@ -133,14 +133,18 @@ input:checked + .slider:before {
     width:10px;
     border:1px solid black;
 }
-.red{
-    background-color: #ff89a6;
+.purple{
+    background-color: #b200b5;
 }
-.green{
-    background-color: #5a8055;
+.yellow{
+    background-color: #fec855;
 }
 .blue{
-    background-color: #3c5fff;
+    background-color: #426ec7;
+}
+
+.red{
+    background-color: #a81107;
 }
 
 ul li{
@@ -202,4 +206,8 @@ svg { width: 100%; height: 100%;}
 
 span img:hover {
     opacity: .5;
+}
+
+.browse {
+    margin-top: 20px;
 }

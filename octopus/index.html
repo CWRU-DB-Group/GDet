@@ -151,7 +151,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel2">Training Configuration</h5>
+                            <h5 class="modal-title" id="exampleModalLabel2">Configuration</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -159,20 +159,23 @@
                         <div class="modal-body">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Transformation File Path</span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Example</span>
                                 </div>
                                 <input type="text" class="form-control" aria-label="Sizing example input"
-                                       aria-describedby="inputGroup-sizing-default" value="pluggable_transformations"
+                                       aria-describedby="inputGroup-sizing-default" value="Examples"
                                 id = "tpath" style="width: 200%">
+                                <button type="button" class="btn btn-primary browse">Browse</button>
                             </div>
                             <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Example File Path</span>
+                                <div class="input-group-prepend browse">
+                                    <span class="input-group-text">Transformations</span>
                                 </div>
                                 <input type="text" class="form-control" aria-label="Sizing example input"
-                                       aria-describedby="inputGroup-sizing-default" value="example"
+                                       aria-describedby="inputGroup-sizing-default" value="Transformations"
                                        id = "tpath1" style="width: 200%">
+                                <button type="button" class="btn btn-primary browse">Browse</button>
                             </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
@@ -245,7 +248,7 @@
                                 <a href="#" class="fa fa-caret-down"></a>
                                 <a href="#" class="fa fa-times"></a>
                             </div>
-                            <h2 class="panel-title">Top-20 Erroneous Nodes</h2>
+                            <h2 class="panel-title">Top-5 Erroneous Nodes</h2>
                             <p class="panel-subtitle"></p>
                         </header>
 
@@ -284,15 +287,15 @@
                                         <thead class="thead-dark center">
 
                                         <ul>
-                                            <li class="cbox"> <div class='box green center'></div>
-                                                <span>DC Constraint</span>
+                                            <li class="cbox"> <div class='box blue center'></div>
+                                                <span>DC Violation</span>
 
                                             </li>
                                             <li class="cbox"><div class='box red center'></div>
                                                 <span>String Noise</span>
 
                                             </li>
-                                            <li class="cbox"><div class='box blue center'></div>
+                                            <li class="cbox"><div class='box yellow center'></div>
                                                 <span>Outlier</span>
                                             </li>
                                         </ul>
@@ -312,24 +315,24 @@
                                         <tr>
                                             <td>16712</td>
                                             <td >Kingdom</td>
-                                            <td>A*im**<div class='sbox green center'></div></td>
-                                            <td><a>t1.json</a></td>
-                                            <td>Animal</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>16712</td>
-                                            <td >Kingdom</td>
-                                            <td>A*im**<div class='sbox red center'></div></td>
+                                            <td>Azimal<div class='sbox blue center'></div></td>
                                             <td><a>t2.json</a></td>
                                             <td>Animal</td>
                                         </tr>
 
                                         <tr>
                                             <td>16712</td>
+                                            <td >Kingdom</td>
+                                            <td>Azimal<div class='sbox red center'></div></td>
+                                            <td><a>t1.json</a></td>
+                                            <td>Animal</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>16712</td>
                                             <td >Family</td>
-                                            <td>Parylo*/a<div class='sbox blue center'></div></td>
-                                            <td><a>t3.json</a></td>
+                                            <td>Paryloit/a<div class='sbox yellow center'></div></td>
+                                            <td><a>t5.json</a></td>
                                             <td>Pyraloidea</td>
                                         </tr>
 

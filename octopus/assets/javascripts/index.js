@@ -165,11 +165,11 @@ $(document).on("click", "#16712", function () {
 
         var lines = data.split("\n");
         alert(lines.length);
-        for (var j = 0; j < 50; j++) {
+        for (var j = 0; j < 49; j++) {
 
             var values = lines[j].split(','); // Split up the comma seperated values
             // We read the key,1st, 2nd and 3rd rows
-            var val = values[0].slice(1, values[0].length - 1);
+            var val = values[0];
 
             if (val == 16712) {
                 nodes.push({
@@ -180,10 +180,10 @@ $(document).on("click", "#16712", function () {
                     font: {
                         size: 70,
                     },
-                    title : "Name: " + values[1].trim().slice(2, values[1].length - 3) + "\n" +
-                        "Order: " + values[2].trim().slice(2, values[2].length - 3) + "\n" +
-                        "Kingdom: " + values[3].trim().slice(2, values[3].length - 3) + "\n" +
-                        "Family: " + values[4].trim().slice(2, values[4].length - 3) + "\n",
+                    title : "Name: " + values[1].trim().slice(5, values[1].length - 4) + "\n" +
+                        "Order: " + values[2].trim().slice(5, values[2].length - 4) + "\n" +
+                        "Kingdom: " + values[3].trim().slice(5, values[3].length - 4) + "\n" +
+                        "Family: " + values[4].trim().slice(5, values[4].length - 4) + "\n",
 
                 });
             } else {
@@ -195,10 +195,10 @@ $(document).on("click", "#16712", function () {
                     font: {
                         size: 40,
                     },
-                    title : "Name: " + values[1].trim().slice(2, values[1].length - 3) + "\n" +
-                        "Order: " + values[2].trim().slice(2, values[2].length - 3) + "\n" +
-                        "Kingdom: " + values[3].trim().slice(2, values[3].length - 3) + "\n" +
-                        "Family: " + values[4].trim().slice(2, values[4].length - 3) + "\n",
+                    title : "Name: " + values[1].trim().slice(5, values[1].length - 4) + "\n" +
+                        "Order: " + values[2].trim().slice(5, values[2].length - 4) + "\n" +
+                        "Kingdom: " + values[3].trim().slice(5, values[3].length - 4) + "\n" +
+                        "Family: " + values[4].trim().slice(5, values[4].length - 4) + "\n",
                 });
             }
 
@@ -209,7 +209,7 @@ $(document).on("click", "#16712", function () {
 
         }
 
-        for (var j = 50; j < lines.length; j++) {
+        for (var j = 49; j < lines.length; j++) {
 
             var values = lines[j].split(','); // Split up the comma seperated values
             // We read the key,1st, 2nd and 3rd rows
@@ -373,6 +373,13 @@ $(document).on('click', '#feedback-submit', function () {
         $('.sppanel').show();
         $('#t-exp').show();
 
+
+    },5000);
+
+    setTimeout(function(){
+
+        $('#myembedding').show();
+        alert("Embedding Generated.")
 
     },20000);
 
