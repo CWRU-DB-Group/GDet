@@ -366,7 +366,7 @@ $(document).on("click", "#be", function () {
 
 
 $(document).on('click', '#feedback-submit', function () {
-    alert("Please waiting!");
+    alert("Please wait.");
     setTimeout(function(){
 
         $('#myembedding').show();
